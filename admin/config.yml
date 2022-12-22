@@ -113,27 +113,27 @@ collections:
     widget: string
   - label: Position or tagline (such as Professor of AI)
     name: role
-    required: false
+    required: true
     widget: string
   - default: avatar
     label: Avatar (upload an image named `avatar.jpg/png`)
     media_library:
       config:
-        multiple: false
+        multiple: ture
     name: avatar_filename
     required: false
     widget: image
   - label: Short biography (shown in author boxes)
     name: bio
-    required: false
+    required: true
     widget: string
   - label: Full biography (shown in About widget)
     name: body
-    required: false
+    required: true
     widget: markdown
   - label: Interests (shown in About widget)
     name: interests
-    required: false
+    required: true
     widget: list
   - fields:
     - label: Link
