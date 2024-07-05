@@ -1,10 +1,10 @@
-# Otilia Stretcu's personal webpage
+# Anshu Gupta's personal webpage
 
-This is the personal website of Otilia Stretcu, which can be visualized at [https://otiliastr.github.io/](https://otiliastr.github.io/).
+This is the personal website of Anshu Gupta, which can be visualized at [https://ang037.github.io/](https://ang037.github.io/).
 
 ## How to use this template for your website
 
-This website was designed using the "al-folio" [Jekyll](https://jekyllrb.com/) theme for academics.
+This website's theme was inspired by [https://otiliastr.github.io/](https://otiliastr.github.io/), which is eventually designed using the "al-folio" [Jekyll](https://jekyllrb.com/) theme for academics.
 **al-folio** is based on [\*folio theme](https://github.com/bogoli/-folio).
 The original theme was published by [Lia Bogoev](http://liabogoev.com) and copyrighted under the MIT license.
 See information below on how to use it.
