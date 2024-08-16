@@ -18,61 +18,82 @@
 </head>
 <body>
   <!-- Header -->
-  <nav id="navbar" class="navbar fixed-top navbar-expand-md grey lighten-5 z-depth-1 navbar-light">
-    <div class="container-fluid p-0">
-      
-        <a class="navbar-brand title font-weight-lighter" href="/"><span class="font-weight-bold">Anshu</span> Gupta</a>
-      
-      <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse text-right" id="navbarNav">
-        <ul class="navbar-nav ml-auto flex-nowrap">
-          <li class="nav-item ">
-            <a class="nav-link" href="/">
-              About
-              
-            </a>
-          </li>
-          
-            
-          
-            
-              <li class="nav-item navbar-active font-weight-bold">
-                  <a class="nav-link" href="/cv/">
-                    Curriculum vitae
-                    
-                      <span class="sr-only">(current)</span>
-                    
-                  </a>
-              </li>
-            
-          
-            
-          
-            
-              <li class="nav-item ">
-                  <a class="nav-link" href="/projects/">
-                    Projects
-                    
-                  </a>
-              </li>
-            
-          
-            
-              <li class="nav-item ">
-                  <a class="nav-link" href="/publications/">
-                    Publications
-                    
-                  </a>
-              </li>
-            
-          
-          
-        </ul>
-      </div>
-    </div>
+  <nav id="navbar" class="navbar fixed-top navbar-expand-md bg-light shadow-sm navbar-light">
+	<div class="container-fluid p-0">
+	  <!-- Brand Section -->
+	  <a class="navbar-brand title font-weight-lighter ml-2" href="/">
+		<span class="font-weight-bold">Anshu</span> Gupta
+	  </a>
+  
+	  <!-- Navbar Toggler for Mobile -->
+	  <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	  </button>
+  
+	  <!-- Navbar Links -->
+	  <div class="collapse navbar-collapse text-right" id="navbarNav">
+		<ul class="navbar-nav ml-auto flex-nowrap">
+		  <li class="nav-item">
+			<a class="nav-link" href="/">About</a>
+		  </li>
+		  <li class="nav-item navbar-active font-weight-bold">
+			<a class="nav-link" href="/cv/">Curriculum Vitae <span class="sr-only">(current)</span></a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="/projects/">Projects</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="/publications/">Publications</a>
+		  </li>
+		</ul>
+	  </div>
+	</div>
   </nav>
+  
+  <!-- Add Bootstrap's JS and CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+  <style>
+	.navbar {
+	  background-color: #f8f9fa !important; /* Light background color */
+	  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+	}
+  
+	.navbar-brand {
+	  font-size: 1.5rem; /* Larger font for the brand */
+	  color: #333 !important;
+	}
+  
+	.navbar-brand span {
+	  color: #007bff !important; /* Highlighted brand name */
+	}
+  
+	.nav-link {
+	  color: #333 !important; /* Darker color for text */
+	  padding-left: 15px; /* Space between links */
+	  padding-right: 15px;
+	}
+  
+	.nav-link:hover {
+	  color: #007bff !important; /* Blue color on hover */
+	}
+  
+	.navbar-toggler {
+	  border: none; /* Remove border from toggle button */
+	}
+  
+	.navbar-toggler-icon {
+	  background-image: url('data:image/svg+xml;base64,...'); /* Customize the icon */
+	}
+  
+	.navbar-active .nav-link {
+	  color: #007bff !important; /* Active link color */
+	}
+  </style>
+  
 
   <!-- Scrolling Progress Bar -->
   <progress id="progress" value="0">

@@ -18,60 +18,79 @@
 </head>
 <body>
   <!-- Header -->
-  <nav id="navbar" class="navbar fixed-top navbar-expand-md grey lighten-5 z-depth-1 navbar-light">
-    <div class="container-fluid p-0">
-      
-        <a class="navbar-brand title font-weight-lighter" href="/"><span class="font-weight-bold">Anshu</span> Gupta</a>
-      
+  <nav id="navbar" class="navbar fixed-top navbar-expand-md bg-light shadow-sm navbar-light">
+    <div class="container-fluid">
+      <!-- Brand Section -->
+      <a class="navbar-brand title font-weight-lighter" href="/">
+        <span class="font-weight-bold">Anshu</span> Gupta
+      </a>
+  
+      <!-- Navbar Toggler for Mobile -->
       <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse text-right" id="navbarNav">
-        <ul class="navbar-nav ml-auto flex-nowrap">
-          <li class="nav-item ">
-            <a class="nav-link" href="/">
-              About
-              
-            </a>
+  
+      <!-- Navbar Links -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link font-weight-bold" href="/">About</a>
           </li>
-          
-            
-          
-            
-              <li class="nav-item ">
-                  <a class="nav-link" href="/cv/">
-                    Curriculum vitae
-                    
-                  </a>
-              </li>
-            
-          
-            
-          
-            
-              <li class="nav-item navbar-active font-weight-bold">
-                  <a class="nav-link" href="/projects/">
-                    Projects
-                    
-                      <span class="sr-only">(current)</span>
-                    
-                  </a>
-              </li>
-            
-          
-            
-              <li class="nav-item ">
-                  <a class="nav-link" href="/publications/">
-                    Publications
-                    
-                  </a>
-              </li>
-
-          
+          <li class="nav-item">
+            <a class="nav-link" href="/cv/">Curriculum Vitae</a>
+          </li>
+          <li class="nav-item navbar-active font-weight-bold">
+            <a class="nav-link" href="/projects/">Projects <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/publications/">Publications</a>
+          </li>
         </ul>
       </div>
     </div>
   </nav>
+  
+  <!-- Add Bootstrap's JS and CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+  <style>
+    .navbar {
+      background-color: #f8f9fa !important; /* Light background color */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    }
+  
+    .navbar-brand {
+      font-size: 1.5rem; /* Larger font for the brand */
+      color: #333 !important;
+    }
+  
+    .navbar-brand span {
+      color: #007bff !important; /* Highlighted brand name */
+    }
+  
+    .nav-link {
+      color: #333 !important; /* Darker color for text */
+    }
+  
+    .nav-link:hover {
+      color: #007bff !important; /* Blue color on hover */
+    }
+  
+    .navbar-toggler {
+      border: none; /* Remove border from toggle button */
+    }
+  
+    .navbar-toggler-icon {
+      background-image: url('data:image/svg+xml;base64,...'); /* Customize the icon */
+    }
+  
+    .navbar-active .nav-link {
+      color: #007bff !important; /* Active link color */
+    }
+  </style>
 
   <!-- Scrolling Progress Bar -->
   <progress id="progress" value="0">
@@ -81,7 +100,7 @@
   </progress>
 
   <!-- Content -->
-  <div class="content">
+  <!-- <div class="content">
     
   <h1>Projects</h1>
   <h6>Some of the projects I am currently working on.</h6>
@@ -129,7 +148,46 @@
 </div>
 
 
+  </div> -->
+
+  <div class="content container mt-5">
+    <h1 class="title text-center font-weight-bold">Projects</h1>
+    <h6 class="text-center font-italic">Some of the projects I am currently working on.</h6>
+  
+    <div id="projects" class="row mt-4">
+      <!-- Project 1 -->
+      <div class="col-md-6 mb-4">
+        <div class="card shadow-sm h-100">
+          <a href="https://turakhia.ucsd.edu/ROADIES/" class="text-decoration-none">
+            <img class="card-img-top" src="/assets/img/livex.jpg" alt="ROADIES Project Thumbnail" />
+            <div class="card-body">
+              <h5 class="card-title font-weight-bold">ROADIES: Reference free, Orthology free, Alignment free, DIscordance aware Estimation of Species tree</h5>
+              <p class="card-text">An automated end-to-end tool to infer species trees directly from raw genomic assemblies.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+  
+      <!-- Project 2 -->
+      <div class="col-md-6 mb-4">
+        <div class="card shadow-sm h-100">
+          <a href="https://sites.google.com/site/multipleframesmatching/" target="_blank" class="text-decoration-none">
+            <img class="card-img-top" src="/assets/img/dp_hls_logo.png" alt="DP-HLS Project Thumbnail" />
+            <div class="card-body">
+              <h5 class="card-title font-weight-bold">DP-HLS: A High-Level Synthesis Framework for Accelerating Dynamic Programming Algorithms in Bioinformatics</h5>
+              <p class="card-text">An HLS-based open-source framework that streamlines the creation of FPGA accelerators for dynamic programming algorithms in bioinformatics.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
+  
+  <!-- Add Bootstrap's JS and CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
   <!-- Footer -->
   <footer>

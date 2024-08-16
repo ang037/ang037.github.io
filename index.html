@@ -18,71 +18,80 @@
 </head>
 <body>
   <!-- Header -->
-  <nav id="navbar" class="navbar fixed-top navbar-expand-md grey lighten-5 z-depth-1 navbar-light">
-    <div class="container-fluid p-0">
-      
-        <div class="row ml-1 ml-sm-0">
-          <span class="contact-icon text-center" style="line-height: 1em;">
-            <a href="mailto:ang037@ucsd.edu"><i class="fa fa-envelope-square gm-icon"></i></a>
-            <a href="https://scholar.google.com/citations?userid=vRrKCdwAAAAJ&hl" target="_blank" title="Google Scholar"><i class="ai ai-google-scholar-square gs-icon"></i></a>
-            <a href="https://www.github.com/ang037" target="_blank" title="GitHub"><i class="fab fa-github-square gh-icon"></i></a>
-            <a href="https://www.linkedin.com/in/guptaanshu26" target="_blank" title="LinkedIn"><i class="fab fa-linkedin li-icon"></i></a>
-          </span>
-        </div>
-      
+  <nav id="navbar" class="navbar fixed-top navbar-expand-md bg-light shadow-sm">
+    <div class="container-fluid">
+      <!-- Social Icons Section -->
+      <div class="d-flex align-items-center">
+        <span class="contact-icon text-center">
+          <a href="mailto:ang037@ucsd.edu" class="mx-2"><i class="fa fa-envelope-square gm-icon"></i></a>
+          <a href="https://scholar.google.com/citations?userid=vRrKCdwAAAAJ&hl" target="_blank" title="Google Scholar" class="mx-2"><i class="ai ai-google-scholar-square gs-icon"></i></a>
+          <a href="https://www.github.com/ang037" target="_blank" title="GitHub" class="mx-2"><i class="fab fa-github-square gh-icon"></i></a>
+          <a href="https://www.linkedin.com/in/guptaanshu26" target="_blank" title="LinkedIn" class="mx-2"><i class="fab fa-linkedin li-icon"></i></a>
+        </span>
+      </div>
+  
+      <!-- Navbar Toggler for Mobile -->
       <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse text-right" id="navbarNav">
-        <ul class="navbar-nav ml-auto flex-nowrap">
-          <li class="nav-item navbar-active font-weight-bold">
-            <a class="nav-link" href="/">
-              About
-              
-                <span class="sr-only">(current)</span>
-              
-            </a>
+  
+      <!-- Navbar Links -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link font-weight-bold" href="/">About</a>
           </li>
-          
-            
-          
-            
-              <li class="nav-item ">
-                  <a class="nav-link" href="/cv/">
-                    Curriculum vitae
-                    
-                  </a>
-              </li>
-            
-          
-            
-          
-            
-              <li class="nav-item ">
-                  <a class="nav-link" href="/projects/">
-                    Projects
-                    
-                  </a>
-              </li>
-            
-          
-            
-              <li class="nav-item ">
-                  <a class="nav-link" href="/publications/">
-                    Publications
-                    
-                  </a>
-              </li>
-
-            
-          
-            
-          
+          <li class="nav-item">
+            <a class="nav-link" href="/cv/">Curriculum Vitae</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/projects/">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/publications/">Publications</a>
+          </li>
         </ul>
       </div>
     </div>
   </nav>
-
+  
+  <!-- Add Bootstrap's JS and CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+  <style>
+    .navbar {
+      background-color: #f8f9fa !important; /* Light background color */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    }
+  
+    .nav-link {
+      color: #333 !important; /* Darker color for text */
+    }
+  
+    .nav-link:hover {
+      color: #007bff !important; /* Blue color on hover */
+    }
+  
+    .contact-icon a {
+      color: #333; /* Dark color for social icons */
+    }
+  
+    .contact-icon a:hover {
+      color: #007bff; /* Blue color on hover for icons */
+    }
+  
+    .navbar-toggler {
+      border: none; /* Remove border from toggle button */
+    }
+  
+    .navbar-toggler-icon {
+      background-image: url('data:image/svg+xml;base64,...'); /* Customize the icon */
+    }
+  </style>
+  
   <!-- Scrolling Progress Bar -->
   <progress id="progress" value="0">
     <div class="progress-container">
