@@ -409,6 +409,33 @@
       <h3 class="bibliography-year font-weight-bold">2024</h3>
     </div>
     <div class="col-md-10">
+      <h5 class="title font-weight-bold">DP-HLS: A High-Level Synthesis Framework for Accelerating Dynamic Programming Algorithms in Bioinformatics.</h5>
+      <p class="author">
+        Yingqi Cao *</a>, <em>Anshu Gupta * </em>, Jason Liang, and <a href="https://turakhia.ucsd.edu/" target="_blank"><strong>Yatish Turakhia</strong></a> (* - equal contribution)
+      </p>
+      <p class="periodical font-italic">
+        arXiv 2411.03398; doi: <a href="https://doi.org/10.48550/arXiv.2411.03398" target="_blank"><strong>https://doi.org/10.48550/arXiv.2411.03398</strong></a>
+      </p>
+      <div>
+        <a class="badge badge-pill badge-light-grey waves-effect mr-1" data-toggle="collapse" href="#VPD-abstract" role="button" aria-expanded="false" aria-controls="VPD-abstract">Abstract</a>
+        <a class="badge badge-pill badge-light-grey waves-effect mr-1" href="https://doi.org/10.48550/arXiv.2411.03398" target="_blank">Paper</a>
+        <a class="badge badge-pill badge-light-grey waves-effect mr-1" href="https://turakhia.ucsd.edu/DP-HLS/" target="_blank">Website</a>
+        <a class="badge badge-pill badge-light-grey waves-effect mr-1" href="#" target="_blank">Video</a>
+      </div>
+      <div class="collapse mt-3" id="VPD-abstract">
+        <div class="abstract card card-body">
+          Dynamic programming (DP) based algorithms are essential yet compute-intensive parts of numerous bioinformatics pipelines, which typically involve populating a 2-D scoring matrix based on a recursive formula, optionally followed by a traceback step to get the optimal alignment path. DP algorithms are used in a wide spectrum of bioinformatics tasks, including read assembly, homology search, gene annotation, basecalling, and phylogenetic inference. So far, specialized hardware like ASICs and FPGAs have provided massive speedup for these algorithms. However, these solutions usually represent a single design point in the DP algorithmic space and typically require months of manual effort to implement using low-level hardware description languages (HDLs). This paper introduces DP-HLS, a novel framework based on High-Level Synthesis (HLS) that simplifies and accelerates the development of a broad set of bioinformatically relevant DP algorithms in hardware. DP-HLS features an easy-to-use template with integrated HLS directives, enabling efficient hardware solutions without requiring hardware design knowledge. In our experience, DP-HLS significantly reduced the development time of new kernels (months to days) and produced designs with comparable resource utilization to open-source hand-coded HDL-based implementations and performance within 7.7-16.8% margin. DP-HLS is compatible with AWS EC2 F1 FPGA instances. To demonstrate the versatility of the DP-HLS framework, we implemented 15 diverse DP kernels, achieving 1.3-32x improved throughput over state-of-the-art GPU and CPU baselines and providing the first open-source FPGA implementation for several of them. The DP-HLS codebase is available freely under the MIT license and its detailed wiki is available to assist new users.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Publication Entry -->
+  <div class="row align-items-center mb-4">
+    <div class="col-md-2 text-center">
+      <h3 class="bibliography-year font-weight-bold">2024</h3>
+    </div>
+    <div class="col-md-10">
       <h5 class="title font-weight-bold">Accurate, scalable, and fully automated inference of species trees from raw genome assemblies using ROADIES.</h5>
       <p class="author">
         <em>Anshu Gupta</em>, <a href="http://eceweb.ucsd.edu/~smirarab/" target="_blank"><strong>Siavash Mirarab</strong></a>, and <a href="https://turakhia.ucsd.edu/" target="_blank"><strong>Yatish Turakhia</strong></a>
