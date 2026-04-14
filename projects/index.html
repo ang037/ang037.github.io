@@ -1,313 +1,346 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Anshu Gupta | Projects</title>
+  <meta name="description" content="Research projects by Anshu Gupta, PhD student at UC San Diego">
 
-  <title>Anshu Gupta | projects</title>
-  <meta name="description" content="This is the personal website of Anshu Gupta">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Slab:wght@300;400;500&display=swap" rel="stylesheet">
 
-  <!-- Fonts and Icons -->
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons" />
+  <!-- Bootstrap 4 -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- CSS Files -->
+  <!-- Icons -->
   <link rel="stylesheet" href="/assets/css/all.min.css">
   <link rel="stylesheet" href="/assets/css/academicons.min.css">
-  <link rel="stylesheet" href="/assets/css/main.css">
-  <link rel="canonical" href="/projects/">
+
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      color: #333;
+      background: #fff;
+      font-size: 0.97rem;
+    }
+
+    /* ── Navbar ── */
+    #navbar {
+      background: #fff !important;
+      border-bottom: 1px solid #e9ecef;
+    }
+    .navbar-brand {
+      font-size: 1.3rem;
+      color: #333 !important;
+      font-weight: 300;
+      letter-spacing: 0.5px;
+    }
+    .navbar-brand span { font-weight: 700; }
+    .nav-link {
+      color: #555 !important;
+      font-size: 0.92rem;
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
+    }
+    .nav-link:hover { color: #1a73e8 !important; }
+    .nav-link.active { color: #1a73e8 !important; font-weight: 600; }
+
+    /* ── Progress bar ── */
+    #progress {
+      position: fixed;
+      top: 56px; left: 0;
+      width: 100%; height: 3px;
+      -webkit-appearance: none;
+      appearance: none;
+      border: none;
+      background: transparent;
+      z-index: 1100;
+    }
+    #progress::-webkit-progress-bar { background: transparent; }
+    #progress::-webkit-progress-value { background: #1a73e8; }
+    #progress::-moz-progress-bar { background: #1a73e8; }
+
+    /* ── Page title ── */
+    .page-title {
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: #222;
+      margin-bottom: 0.15rem;
+    }
+
+    /* ── Section divider ── */
+    .section-title {
+      font-size: 1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #1a73e8;
+      border-bottom: 2px solid #e9ecef;
+      padding-bottom: 5px;
+      margin-bottom: 1.5rem;
+      margin-top: 2.2rem;
+    }
+
+    /* ── Project card ── */
+    .project-item {
+      display: flex;
+      gap: 22px;
+      margin-bottom: 2rem;
+      align-items: flex-start;
+    }
+    .project-logo {
+      width: 80px;
+      height: 80px;
+      flex-shrink: 0;
+      border-radius: 8px;
+      object-fit: contain;
+      border: 1px solid #e9ecef;
+      background: #f8f9fa;
+      padding: 6px;
+    }
+    .project-logo-placeholder {
+      width: 80px;
+      height: 80px;
+      flex-shrink: 0;
+      border-radius: 8px;
+      background: #eef2fb;
+      border: 1px solid #d0d9f5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      color: #1a73e8;
+    }
+    .project-body { flex: 1; }
+    .project-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 2px;
+      line-height: 1.4;
+    }
+    .project-title a { color: inherit; text-decoration: none; }
+    .project-title a:hover { color: #1a73e8; text-decoration: none; }
+    .project-meta {
+      font-size: 0.81rem;
+      color: #888;
+      margin-bottom: 5px;
+    }
+    .project-desc {
+      font-size: 0.9rem;
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 7px;
+    }
+    .project-desc ul {
+      padding-left: 1.2rem;
+      margin: 4px 0 0 0;
+    }
+    .project-desc ul li { margin-bottom: 2px; }
+
+    /* ── Tags / links ── */
+    .proj-tag {
+      display: inline-block;
+      font-size: 0.76rem;
+      border-radius: 4px;
+      padding: 2px 9px;
+      margin: 2px 3px 2px 0;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.15s;
+    }
+    .tag-paper  { background: #e8f0fe; color: #1a73e8; border: 1px solid #c5d8fc; }
+    .tag-paper:hover  { background: #d2e3fc; color: #1a73e8; text-decoration: none; }
+    .tag-site   { background: #e6f4ea; color: #188038; border: 1px solid #b7dfc4; }
+    .tag-site:hover   { background: #ceead6; color: #188038; text-decoration: none; }
+    .tag-github { background: #f1f0ef; color: #333; border: 1px solid #d5d2ce; }
+    .tag-github:hover { background: #e0dfdd; color: #333; text-decoration: none; }
+    .tag-venue  { background: #fff3e0; color: #b45309; border: 1px solid #fcd7a0; }
+
+    /* ── Status badge ── */
+    .status-badge {
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 10px;
+      vertical-align: middle;
+      margin-left: 6px;
+    }
+    .badge-ongoing { background: #e6f4ea; color: #188038; }
+    .badge-published { background: #e8f0fe; color: #1a73e8; }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 22px;
+      font-size: 0.83rem;
+      color: #999;
+      border-top: 1px solid #e9ecef;
+      margin-top: 50px;
+    }
+  </style>
 </head>
 <body>
-  <!-- Header -->
-  <nav id="navbar" class="navbar fixed-top navbar-expand-md bg-light shadow-sm navbar-light">
-    <div class="container-fluid">
-      <!-- Brand Section -->
-      <a class="navbar-brand title font-weight-lighter" href="/">
-        <span class="font-weight-bold">Anshu</span> Gupta
-      </a>
-  
-      <!-- Navbar Toggler for Mobile -->
-      <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+
+  <!-- Navbar -->
+  <nav id="navbar" class="navbar fixed-top navbar-expand-md navbar-light shadow-sm">
+    <div class="container">
+      <a class="navbar-brand" href="/"><span>Anshu</span> Gupta</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-  
-      <!-- Navbar Links -->
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link font-weight-bold" href="/">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/cv/">Curriculum Vitae</a>
-          </li>
-          <li class="nav-item navbar-active font-weight-bold">
-            <a class="nav-link" href="/projects/">Projects <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/publications/">Publications</a>
-          </li>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="/">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="/cv/">CV</a></li>
+          <li class="nav-item"><a class="nav-link" href="/publications/">Publications</a></li>
+          <li class="nav-item"><a class="nav-link active" href="/projects/">Projects</a></li>
         </ul>
       </div>
     </div>
   </nav>
-  
-  <!-- Add Bootstrap's JS and CSS -->
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  
-  <style>
-    .navbar {
-      background-color: #f8f9fa !important; /* Light background color */
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    }
-  
-    .navbar-brand {
-      font-size: 1.5rem; /* Larger font for the brand */
-      color: #333 !important;
-    }
-  
-    .navbar-brand span {
-      color: #007bff !important; /* Highlighted brand name */
-    }
-  
-    .nav-link {
-      color: #333 !important; /* Darker color for text */
-    }
-  
-    .nav-link:hover {
-      color: #007bff !important; /* Blue color on hover */
-    }
-  
-    .navbar-toggler {
-      border: none; /* Remove border from toggle button */
-    }
-  
-    .navbar-toggler-icon {
-      background-image: url('data:image/svg+xml;base64,...'); /* Customize the icon */
-    }
-  
-    .navbar-active .nav-link {
-      color: #007bff !important; /* Active link color */
-    }
-  </style>
 
-  <!-- Scrolling Progress Bar -->
-  <progress id="progress" value="0">
-    <div class="progress-container">
-      <span class="progress-bar"></span>
-    </div>
-  </progress>
+  <progress id="progress" value="0"></progress>
 
   <!-- Content -->
-  <!-- <div class="content">
-    
-  <h1>Projects</h1>
-  <h6>Some of the projects I am currently working on.</h6>
+  <div class="container mt-5 pt-4" style="max-width: 860px;">
 
-
-<div id="projects" class="row mt-2 pt-3" style="overflow: visible !important;">
-  
-  
-    <div class="project-card">
-      
-        <a href="https://turakhia.ucsd.edu/ROADIES/">
-      
-        <div class="card">
-          <img class="card-img-top" src="/assets/img/livex.jpg" alt="project thumbnail" />
-          <div class="card-body">
-            <h5 class="card-title">ROADIES: Reference free, Orthology free, Alignment free, DIscordance aware Estimation of Species tree</h5>
-            <p class="card-text">It is an automated end-to-end tool to infer species tree directly from raw genomic assemblies.</p>
-            <div class="row ml-1 mr-1 p-0">
-              
-              
-            </div>
-          </div>
-        </div>
-      </a>
+    <div class="pt-3 mb-1">
+      <h1 class="page-title">Projects</h1>
+      <p class="text-muted" style="font-size:0.9rem;">Research and engineering projects. See also my <a href="/publications/" style="color:#1a73e8;">publications</a>.</p>
     </div>
-  
-    <div class="project-card">
-      
-        <a href="https://sites.google.com/site/multipleframesmatching/" target="_blank">
-      
-        <div class="card">
-          <img class="card-img-top" src="/assets/img/dp_hls_logo.png" alt="project thumbnail" />
-          <div class="card-body">
-            <h5 class="card-title">DP-HLS: A High-Level Synthesis Framework for Accelerating Dynamic Programming Algorithms in Bioinformatics </h5>
-            <p class="card-text">It is an HLS-based open-source framework that streamlines the creation of FPGA accelerators for new algorithms based on Dynamic Programming used in the field of Bioinformatics.</p>
-            <div class="row ml-1 mr-1 p-0">
-              
-              
-            </div>
-          </div>
+
+    <!-- ══════ RESEARCH PROJECTS ══════ -->
+    <div class="section-title">Research Projects</div>
+
+    <!-- ROADIES -->
+    <div class="project-item">
+      <img class="project-logo" src="/assets/img/roadies_logo.png" alt="ROADIES"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <div class="project-logo-placeholder" style="display:none;"><i class="fas fa-dna"></i></div>
+      <div class="project-body">
+        <div class="project-title">
+          <a href="https://turakhia.ucsd.edu/ROADIES/" target="_blank">ROADIES</a>
+          <span class="status-badge badge-ongoing">Ongoing</span>
         </div>
-      </a>
-    </div>
-  
-</div>
-
-
-  </div> -->
-
-  <div class="content container mt-5">
-    <h1 class="title text-center font-weight-bold">Projects</h1>
-    <h6 class="text-center font-italic">Some of the projects I am currently working on.</h6>
-  
-    <div id="projects" class="row mt-4">
-      <!-- Project 1 -->
-      <div class="col-md-6 mb-4">
-        <div class="card shadow-sm h-100">
-          <a href="https://turakhia.ucsd.edu/ROADIES/" class="text-decoration-none">
-            <img class="card-img-top" src="/assets/img/livex.jpg" alt="ROADIES Project Thumbnail" />
-            <div class="card-body">
-              <h5 class="card-title font-weight-bold">ROADIES: Reference free, Orthology free, Alignment free, DIscordance aware Estimation of Species tree</h5>
-              <p class="card-text">An automated end-to-end tool to infer species trees directly from raw genomic assemblies.</p>
-            </div>
-          </a>
+        <div class="project-meta">Jan 2023 – Present &nbsp;&middot;&nbsp; Evolutionary Genomics / HPC</div>
+        <div class="project-desc">
+          <strong>R</strong>eference free, <strong>O</strong>rthology free, <strong>A</strong>lignment free, <strong>D</strong>iscordance aware <strong>E</strong>stimation of <strong>S</strong>pecies tree — a fully automated, end-to-end HPC pipeline for inferring species trees directly from raw genome assemblies. Uses GPU/CPU co-processing and parallelization primitives to achieve massive scalability.
+          <ul>
+            <li>Achieved <strong>176&times; speedup</strong> in tree generation for large-scale genomics datasets</li>
+            <li>Published in <strong>PNAS 2025</strong>, featured on the journal cover</li>
+            <li>Presented at <strong>ISMB 2024</strong>, Montreal, Canada</li>
+          </ul>
         </div>
+        <a class="proj-tag tag-paper" href="https://doi.org/10.1073/pnas.2500553122" target="_blank"><i class="fas fa-file-alt fa-xs"></i> PNAS 2025</a>
+        <a class="proj-tag tag-site"  href="https://turakhia.ucsd.edu/ROADIES/" target="_blank"><i class="fas fa-globe fa-xs"></i> Website</a>
+        <a class="proj-tag tag-github" href="https://github.com/turakhia-lab/ROADIES" target="_blank"><i class="fab fa-github fa-xs"></i> GitHub</a>
       </div>
-  
-      <!-- Project 2 -->
-      <div class="col-md-6 mb-4">
-        <div class="card shadow-sm h-100">
-          <a href="https://sites.google.com/site/multipleframesmatching/" target="_blank" class="text-decoration-none">
-            <img class="card-img-top" src="/assets/img/dp_hls_logo.png" alt="DP-HLS Project Thumbnail" />
-            <div class="card-body">
-              <h5 class="card-title font-weight-bold">DP-HLS: A High-Level Synthesis Framework for Accelerating Dynamic Programming Algorithms in Bioinformatics</h5>
-              <p class="card-text">An HLS-based open-source framework that streamlines the creation of FPGA accelerators for dynamic programming algorithms in bioinformatics.</p>
-            </div>
-          </a>
+    </div>
+
+    <!-- DP-HLS -->
+    <div class="project-item">
+      <img class="project-logo" src="/assets/img/dp_hls_logo.png" alt="DP-HLS"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <div class="project-logo-placeholder" style="display:none;"><i class="fas fa-microchip"></i></div>
+      <div class="project-body">
+        <div class="project-title">
+          <a href="https://turakhia.ucsd.edu/DP-HLS/" target="_blank">DP-HLS</a>
+          <span class="status-badge badge-published">HPCA 2026</span>
+        </div>
+        <div class="project-meta">Nov 2022 – Jun 2024 &nbsp;&middot;&nbsp; FPGA Acceleration / Bioinformatics</div>
+        <div class="project-desc">
+          An HLS-based open-source framework that streamlines the creation of FPGA accelerators for dynamic programming algorithms used in bioinformatics — covering sequence alignment, homology search, basecalling, and more. Features a parameterizable systolic array architecture allowing algorithm customization without hardware redesign.
+          <ul>
+            <li>Achieved <strong>32&times; speedup</strong> over CPU/GPU baselines and <strong>20&times; faster</strong> development time than hand-coded HDL</li>
+            <li>Implemented 15 diverse DP kernels; compatible with AWS EC2 F1 FPGA instances</li>
+          </ul>
+        </div>
+        <a class="proj-tag tag-paper" href="https://doi.org/10.48550/arXiv.2411.03398" target="_blank"><i class="fas fa-file-alt fa-xs"></i> arXiv</a>
+        <a class="proj-tag tag-site"  href="https://turakhia.ucsd.edu/DP-HLS/" target="_blank"><i class="fas fa-globe fa-xs"></i> Website</a>
+        <a class="proj-tag tag-github" href="https://github.com/TurakhiaLab/DP-HLS" target="_blank"><i class="fab fa-github fa-xs"></i> GitHub</a>
+      </div>
+    </div>
+
+    <!-- ML Hardware Acceleration -->
+    <div class="project-item">
+      <div class="project-logo-placeholder"><i class="fas fa-brain"></i></div>
+      <div class="project-body">
+        <div class="project-title">
+          ML Hardware Acceleration
+          <span class="status-badge badge-ongoing">Ongoing</span>
+        </div>
+        <div class="project-meta">May 2025 – Present &nbsp;&middot;&nbsp; AI / Hardware Co-Design</div>
+        <div class="project-desc">
+          Designing <strong>hardware-aware weight compression techniques</strong> to significantly optimize and accelerate Deep Learning inference on specialized hardware. Focused on maximizing computational efficiency and reducing memory footprint for deploying large-scale neural networks at the edge.
         </div>
       </div>
     </div>
-  </div>
-  
-  <!-- Add Bootstrap's JS and CSS -->
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- ══════ OTHER PROJECTS ══════ -->
+    <div class="section-title">Other Projects</div>
+
+    <!-- Parallelized Genomic Algorithms -->
+    <div class="project-item">
+      <div class="project-logo-placeholder"><i class="fas fa-rocket"></i></div>
+      <div class="project-body">
+        <div class="project-title">Parallelized Genomic and HPC Algorithms</div>
+        <div class="project-meta">Jan 2023 – Mar 2024 &nbsp;&middot;&nbsp; C++, CUDA, Intel TBB, Git</div>
+        <div class="project-desc">
+          <ul>
+            <li>Parallelized Suffix Array construction on GPUs, achieving <strong>86–571&times; speedup</strong> over optimized CPU baselines for genomic read mapping</li>
+            <li>Accelerated dense matrix multiplication using CUDA on NVIDIA K80/T4 GPUs; implemented Intel AVX2 vectorization for high-throughput computing</li>
+            <li>Optimized large-scale solvers (e.g., Aliev-Panfilov) on the <strong>Expanse Supercomputer</strong> using MPI and C++ parallelization</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- HLS4ML -->
+    <div class="project-item">
+      <div class="project-logo-placeholder"><i class="fas fa-cogs"></i></div>
+      <div class="project-body">
+        <div class="project-title">
+          <a href="https://fastmachinelearning.org/hls4ml/" target="_blank">Optimization of HLS4ML Library</a>
+        </div>
+        <div class="project-meta">Apr – Jun 2023 &nbsp;&middot;&nbsp; Vitis HLS, Vivado, Git, Python</div>
+        <div class="project-desc">
+          Improved the <a href="https://fastmachinelearning.org/hls4ml/" target="_blank">HLS4ML library</a> to achieve efficient ML hardware inference via High-Level Synthesis, focusing on the DL-to-FPGA flow. Partnered with <strong>CERN's HLS4ML team</strong> to implement feature enhancements and optimizations.
+        </div>
+        <a class="proj-tag tag-github" href="https://github.com/fastmachinelearning/hls4ml" target="_blank"><i class="fab fa-github fa-xs"></i> GitHub</a>
+      </div>
+    </div>
+
+  </div><!-- /container -->
+
+  <footer>&copy; 2026 Anshu Gupta</footer>
+
+  <!-- Scripts -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-  <!-- Footer -->
-  <footer>
-    &copy; Copyright 2024 Anshu Gupta.
-    
-    
-  </footer>
-
-  <!-- Core JavaScript Files -->
-  <script src="/assets/js/jquery.min.js" type="text/javascript"></script>
-  <script src="/assets/js/popper.min.js" type="text/javascript"></script>
-  <script src="/assets/js/bootstrap.min.js" type="text/javascript"></script>
-  <script src="/assets/js/mdb.min.js" type="text/javascript"></script>
-  <script async="" src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
-  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML"></script>
-  <script src="/assets/js/common.js"></script>
-
-  <!-- Scrolling Progress Bar -->
-  <script type="text/javascript">
-    $(document).ready(function() {
-      var navbarHeight = $('#navbar').outerHeight(true);
-      $('body').css({ 'padding-top': navbarHeight });
-      $('progress-container').css({ 'padding-top': navbarHeight });
-      var progressBar = $('#progress');
-      progressBar.css({ 'top': navbarHeight });
-      var getMax = function() { return $(document).height() - $(window).height(); }
-      var getValue = function() { return $(window).scrollTop(); }   
-      // Check if the browser supports the progress element.
-      if ('max' in document.createElement('progress')) {
-        // Set the 'max' attribute for the first time.
-        progressBar.attr({ max: getMax() });
-        progressBar.attr({ value: getValue() });
-    
-        $(document).on('scroll', function() {
-          // On scroll only the 'value' attribute needs to be calculated.
-          progressBar.attr({ value: getValue() });
-        });
-
-        $(window).resize(function() {
-          var navbarHeight = $('#navbar').outerHeight(true);
-          $('body').css({ 'padding-top': navbarHeight });
-          $('progress-container').css({ 'padding-top': navbarHeight });
-          progressBar.css({ 'top': navbarHeight });
-          // On resize, both the 'max' and 'value' attributes need to be calculated.
-          progressBar.attr({ max: getMax(), value: getValue() });
-        });
-      } else {
-        var max = getMax(), value, width;
-        var getWidth = function() {
-          // Calculate the window width as a percentage.
-          value = getValue();
-          width = (value/max) * 100;
-          width = width + '%';
-          return width;
-        }
-        var setWidth = function() { progressBar.css({ width: getWidth() }); };
-        setWidth();
-        $(document).on('scroll', setWidth);
-        $(window).on('resize', function() {
-          // Need to reset the 'max' attribute.
-          max = getMax();
-          setWidth();
-        });
-      }
-    });
-  </script>
-
-  <!-- Code Syntax Highlighting -->
-  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
-  <script src="/assets/js/highlight.pack.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-
-  <!-- Script Used for Randomizing the Projects Order -->
-  <!-- <script type="text/javascript">
-    $.fn.shuffleChildren = function() {
-      $.each(this.get(), function(index, el) {
-        var $el = $(el);
-        var $find = $el.children();
-
-        $find.sort(function() {
-          return 0.5 - Math.random();
-        });
-
-        $el.empty();
-        $find.appendTo($el);
-      });
-    };
-    $("#projects").shuffleChildren();
-  </script> -->
-
-  <!-- Project Cards Layout -->
-  <script type="text/javascript">
-    var $grid = $('#projects');
-
-    // $grid.masonry({ percentPosition: true });
-    // $grid.masonry('layout');
-
-    // Trigger after images load.
-    $grid.imagesLoaded().progress(function() {
-      $grid.masonry({ percentPosition: true });
-      $grid.masonry('layout');
-    });
-  </script>
-
-  <!-- Enable Tooltips -->
-  <script type="text/javascript">
-    $(function () {
-      $('[data-toggle="tooltip"]').tooltip()
-    })
-  </script>
-
-  <!-- Google Analytics -->
   <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', '', 'auto');
-    ga('send', 'pageview');
+    $(document).ready(function () {
+      var navH = $('#navbar').outerHeight(true);
+      $('body').css('padding-top', navH);
+      var $bar = $('#progress');
+      $bar.css('top', navH);
+      function updateBar() {
+        var max = $(document).height() - $(window).height();
+        $bar.attr({ max: max, value: $(window).scrollTop() });
+      }
+      updateBar();
+      $(document).on('scroll', updateBar);
+      $(window).on('resize', function () {
+        navH = $('#navbar').outerHeight(true);
+        $('body').css('padding-top', navH);
+        $bar.css('top', navH);
+        updateBar();
+      });
+    });
   </script>
+
 </body>
 </html>
