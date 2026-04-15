@@ -42,7 +42,7 @@
     #navbar { background: var(--nav-bg) !important; border-bottom: 1px solid var(--border); transition: background 0.2s; }
     .navbar-brand { font-size: 1.3rem; color: var(--text) !important; font-weight: 300; }
     .navbar-brand span { font-weight: 700; }
-    .nav-link { color: var(--text-muted) !important; font-size: 0.92rem; padding-left: 1rem !important; padding-right: 1rem !important; }
+    .nav-link { color: var(--text-muted) !important; font-size: 0.88rem; padding-left: 0.7rem !important; padding-right: 0.7rem !important; }
     .nav-link:hover, .nav-link.active { color: var(--accent) !important; }
     .nav-link.active { font-weight: 600; }
 
@@ -162,7 +162,7 @@
 <body>
 
 <nav id="navbar" class="navbar fixed-top navbar-expand-md shadow-sm">
-  <div class="container" style="max-width:900px;">
+  <div class="container" style="max-width:960px;">
     <a class="navbar-brand" href="/"><span>Anshu</span> Gupta</a>
     <div class="d-flex align-items-center ml-auto order-md-last">
       <button id="theme-toggle" class="theme-btn mr-2" title="Toggle dark/light mode">
@@ -179,6 +179,9 @@
         <li class="nav-item"><a class="nav-link" href="/cv/">CV</a></li>
         <li class="nav-item"><a class="nav-link" href="/publications/">Publications</a></li>
         <li class="nav-item"><a class="nav-link" href="/projects/">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="/teaching/">Teaching</a></li>
+        <li class="nav-item"><a class="nav-link" href="/news/">News</a></li>
+        <li class="nav-item"><a class="nav-link" href="/press/">Press</a></li>
       </ul>
     </div>
   </div>
@@ -217,66 +220,61 @@
       and <a href="http://eceweb.ucsd.edu/~smirarab/" target="_blank"><strong>Prof. Siavash Mirarab</strong></a>.
     </p>
     <p>
-      My research sits at the intersection of <strong>High-Performance Computing (HPC)</strong> and
-      <strong>Computational/Evolutionary Genomics</strong>. I design efficient hardware/software co-designed
-      tools for genomic data analysis — from FPGA-accelerated dynamic programming frameworks to fully
-      automated phylogenomic pipelines. My tools are actively used by researchers worldwide, with ongoing
-      collaborations with the <a href="https://vertebrategenomesproject.org/" target="_blank"><strong>Vertebrate Genomes Project (VGP)</strong></a>
-      consortium and researchers at the <a href="https://scripps.ucsd.edu/" target="_blank"><strong>Scripps Institution of Oceanography, UCSD</strong></a>.
+      My research bridges <strong>computer architecture</strong>, <strong>machine learning systems</strong>,
+      and <strong>computational biology</strong>. I build hardware/software co-designed tools that make
+      large-scale genomic analyses fast and accessible — spanning FPGA-based accelerators for dynamic
+      programming and ML kernels to fully automated phylogenomic pipelines driven by deep learning-friendly
+      frameworks. My work is grounded in real hardware (I have a tape-out to my name from my industry years)
+      and aimed at scientific impact: my tools are actively used by researchers worldwide.
+    </p>
+    <p>
+      I collaborate with the <a href="https://vertebrategenomesproject.org/" target="_blank"><strong>Vertebrate Genomes Project (VGP)</strong></a>
+      consortium, researchers at the <a href="https://scripps.ucsd.edu/" target="_blank"><strong>Scripps Institution of Oceanography, UCSD</strong></a>,
+      and the <strong>AMD Omics Group</strong> on accelerating bioinformatics workloads at scale.
     </p>
     <p>
       I received my M.S. in Computer Engineering from UC San Diego (GPA: 4.0) and my B.Tech. from
       <a href="https://www.iiests.ac.in/" target="_blank"><strong>IIEST Shibpur, India</strong></a>
       (GPA: 9.55/10, Rank: 4). Before my PhD, I spent 3+ years as a Digital Design Engineer at
-      <a href="https://www.analog.com/" target="_blank"><strong>Analog Devices</strong></a> with a successful
-      tape-out experience. I was also a <a href="https://www2.daad.de/deutschland/stipendium/datenbank/en/21148-scholarship-database/?detail=50015295" target="_blank"><strong>DAAD WISE Scholar</strong></a>
+      <a href="https://www.analog.com/" target="_blank"><strong>Analog Devices</strong></a>.
+      I was also a <a href="https://www2.daad.de/deutschland/stipendium/datenbank/en/21148-scholarship-database/?detail=50015295" target="_blank"><strong>DAAD WISE Scholar</strong></a>
       at the <a href="https://www.uni-bremen.de/en/" target="_blank">University of Bremen, Germany</a>.
     </p>
   </div>
 
-  <!-- ══ RESEARCH IMPACT ══ -->
-  <div class="section-title">Research Impact</div>
+  <!-- ══ PRESS & MEDIA COVERAGE ══ -->
+  <div class="section-title" style="display:flex;align-items:center;justify-content:space-between;">
+    <span>Press &amp; Media Coverage</span>
+    <a href="/press/" style="font-size:0.75rem;font-weight:500;letter-spacing:0;text-transform:none;">Full coverage &rarr;</a>
+  </div>
 
-  <!-- PNAS Cover -->
   <div class="pnas-block">
     <img class="pnas-cover-img" src="assets/img/pnas_cover.jpg" alt="PNAS Cover May 2025"
          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
     <div class="pnas-placeholder" style="display:none;">PNAS<br>Cover<br>May 2025</div>
     <div class="pnas-text">
-      <strong>Featured on the PNAS Journal Cover</strong> — May 13, 2025, Vol.&nbsp;122, No.&nbsp;19<br>
+      <strong>PNAS Journal Cover</strong> — May 13, 2025, Vol.&nbsp;122, No.&nbsp;19<br>
       <a href="https://doi.org/10.1073/pnas.2500553122" target="_blank">"Accurate, scalable, and fully automated inference of species trees from raw genome assemblies using ROADIES"</a>
-      was published in <em>Proceedings of the National Academy of Sciences</em> and selected as the cover article.
-      Featured in the UCSD Today newsletter and highlighted across multiple research platforms.
+      selected as the cover article of <em>Proceedings of the National Academy of Sciences</em> and
+      featured across multiple scientific news platforms.
     </div>
   </div>
 
-  <!-- Live GitHub + Conda stats -->
-  <div class="tool-stats">
-    <a class="stat-chip" href="https://github.com/TurakhiaLab/ROADIES/stargazers" target="_blank">
-      <i class="fas fa-star"></i> <span id="gh-stars">43</span>&nbsp;GitHub Stars
-    </a>
-    <a class="stat-chip" href="https://github.com/TurakhiaLab/ROADIES/network/members" target="_blank">
-      <i class="fas fa-code-branch"></i> <span id="gh-forks">--</span>&nbsp;Forks
-    </a>
-    <a class="stat-chip conda" href="https://github.com/TurakhiaLab/ROADIES" target="_blank">
-      <i class="fas fa-download"></i> 2K+&nbsp;Conda Downloads
-    </a>
-    <a class="stat-chip pnas" href="https://www.pnas.org/toc/pnas/122/19" target="_blank">
-      <i class="fas fa-book-open"></i> PNAS Journal Cover
-    </a>
-  </div>
-
-  <!-- Press -->
-  <div style="font-size:0.83rem; color:var(--text-muted); margin-bottom:0.4rem;">Press &amp; coverage</div>
   <div class="press-row">
     <a class="press-chip" href="https://today.ucsd.edu/story/a-fully-automated-tool-for-species-tree-inference" target="_blank">
-      <i class="fas fa-newspaper"></i> UCSD Today Newsletter
+      <i class="fas fa-newspaper"></i> UCSD Today
     </a>
     <a class="press-chip" href="https://www.pnas.org/toc/pnas/122/19" target="_blank">
-      <i class="fas fa-flask"></i> PNAS Cover Article
+      <i class="fas fa-flask"></i> PNAS Cover
     </a>
-    <a class="press-chip" href="https://www.linkedin.com/in/guptaanshu26" target="_blank">
-      <i class="fab fa-linkedin"></i> LinkedIn Highlights
+    <a class="press-chip" href="https://www.linkedin.com/posts/university-of-california-san-diego---jacobs-school-of-engineering_a-team-of-engineers-at-uc-san-diego-is-making-activity-7327801133756755968-lHRj?utm_source=share&utm_medium=member_desktop&rcm=ACoAABq5YR8BD6zHsK4iqsdH-hSfbiHpdPmgwfk" target="_blank">
+      <i class="fab fa-linkedin"></i> Jacobs School of Engineering
+    </a>
+    <a class="press-chip" href="https://scienmag.com/new-breakthrough-fully-automated-tool-revolutionizes-species-tree-inference/" target="_blank">
+      <i class="fas fa-microscope"></i> SciEnMag
+    </a>
+    <a class="press-chip" href="https://www.eurekalert.org/news-releases/1082752" target="_blank">
+      <i class="fas fa-bolt"></i> EurekAlert!
     </a>
   </div>
 
@@ -372,10 +370,16 @@
     <a class="collab-chip" href="http://eceweb.ucsd.edu/~smirarab/" target="_blank">
       <i class="fas fa-tree"></i> Mirarab Lab, UCSD
     </a>
+    <a class="collab-chip" href="https://www.amd.com/en/corporate/research.html" target="_blank">
+      <i class="fas fa-server"></i> AMD Omics Group
+    </a>
   </div>
 
   <!-- ══ NEWS ══ -->
-  <div class="section-title">News</div>
+  <div class="section-title" style="display:flex;align-items:center;justify-content:space-between;">
+    <span>News</span>
+    <a href="/news/" style="font-size:0.75rem;font-weight:500;letter-spacing:0;text-transform:none;">All news &rarr;</a>
+  </div>
 
   <div class="news-item">
     <span class="news-date">Feb 2026</span>
@@ -470,13 +474,7 @@
     $(window).on('resize', function(){ navH=$('#navbar').outerHeight(true); $('body').css('padding-top',navH); $('#progress').css('top',navH); upd(); });
   });
 
-  /* ── Live GitHub stats ── */
-  fetch('https://api.github.com/repos/TurakhiaLab/ROADIES')
-    .then(r => r.json())
-    .then(d => {
-      if (d.stargazers_count) document.getElementById('gh-stars').textContent = d.stargazers_count;
-      if (d.forks_count)      document.getElementById('gh-forks').textContent  = d.forks_count;
-    }).catch(()=>{});
+;
 </script>
 </body>
 </html>

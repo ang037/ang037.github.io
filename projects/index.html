@@ -34,7 +34,7 @@
     #navbar { background: var(--nav-bg) !important; border-bottom: 1px solid var(--border); transition: background 0.2s; }
     .navbar-brand { font-size: 1.3rem; color: var(--text) !important; font-weight: 300; }
     .navbar-brand span { font-weight: 700; }
-    .nav-link { color: var(--text-muted) !important; font-size: 0.92rem; padding-left: 1rem !important; padding-right: 1rem !important; }
+    .nav-link { color: var(--text-muted) !important; font-size: 0.88rem; padding-left: 0.7rem !important; padding-right: 0.7rem !important; }
     .nav-link:hover, .nav-link.active { color: var(--accent) !important; }
     .nav-link.active { font-weight: 600; }
     .theme-btn { background: none; border: 1px solid var(--border); border-radius: 20px; padding: 4px 10px; cursor: pointer; color: var(--text-muted); font-size: 0.85rem; transition: all 0.2s; line-height: 1; }
@@ -89,6 +89,20 @@
     .tag-code  { background: var(--card-bg); color: var(--text); border: 1px solid var(--border); }
     .tag-code:hover { border-color: var(--accent); text-decoration: none; color: var(--text); }
 
+    /* Stat chips */
+    .stat-row { display: flex; flex-wrap: wrap; gap: 7px; margin: 6px 0 8px; }
+    .stat-chip {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.78rem; font-weight: 500;
+      background: var(--card-bg); border: 1px solid var(--border);
+      border-radius: 5px; padding: 3px 10px; color: var(--text);
+      text-decoration: none; transition: border-color 0.15s;
+    }
+    .stat-chip:hover { border-color: var(--accent); color: var(--text); text-decoration: none; }
+    .stat-chip i { color: var(--accent); }
+    .stat-chip.sc-green i { color: var(--green); }
+    .stat-chip.sc-amber i { color: var(--amber); }
+
     /* Status badge */
     .status-badge { font-size: 0.68rem; font-weight: 600; padding: 2px 7px; border-radius: 10px; vertical-align: middle; margin-left: 6px; }
     .badge-ongoing   { background: var(--green-light); color: var(--green); border: 1px solid var(--green-border); }
@@ -100,7 +114,7 @@
 <body>
 
 <nav id="navbar" class="navbar fixed-top navbar-expand-md shadow-sm">
-  <div class="container" style="max-width:900px;">
+  <div class="container" style="max-width:960px;">
     <a class="navbar-brand" href="/"><span>Anshu</span> Gupta</a>
     <div class="d-flex align-items-center ml-auto order-md-last">
       <button id="theme-toggle" class="theme-btn mr-2" title="Toggle dark/light mode">
@@ -117,6 +131,9 @@
         <li class="nav-item"><a class="nav-link" href="/cv/">CV</a></li>
         <li class="nav-item"><a class="nav-link" href="/publications/">Publications</a></li>
         <li class="nav-item"><a class="nav-link active" href="/projects/">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="/teaching/">Teaching</a></li>
+        <li class="nav-item"><a class="nav-link" href="/news/">News</a></li>
+        <li class="nav-item"><a class="nav-link" href="/press/">Press</a></li>
       </ul>
     </div>
   </div>
@@ -135,19 +152,27 @@
   <!-- Research Projects -->
   <div class="section-title">Research Projects</div>
 
-  <!-- ML Hardware Acceleration -->
+  <!-- MAGNET -->
   <div class="project-item">
-    <div class="proj-icon"><i class="fas fa-brain"></i></div>
+    <div class="proj-icon green"><i class="fas fa-project-diagram"></i></div>
     <div class="proj-body">
       <div class="proj-title">
-        ML Hardware Acceleration
+        MAGNET — MultimodAl GarNishEd Trees
         <span class="status-badge badge-ongoing">Ongoing</span>
       </div>
-      <div class="proj-meta">May 2025 – Present &nbsp;&middot;&nbsp; AI / Hardware Co-Design</div>
+      <div class="proj-meta">2025 – Present &nbsp;&middot;&nbsp; Phylogenomics / HPC / Algorithm Design</div>
       <div class="proj-desc">
-        Designing <strong>hardware-aware weight compression techniques</strong> to significantly optimize and accelerate
-        Deep Learning inference on specialized hardware. Focused on maximizing computational efficiency and reducing
-        memory footprint for deploying large-scale neural networks at the edge.
+        A novel computational pipeline for species tree inference that <strong>combines Locus-of-Sequence (LoS)
+        and Whole Genome (WG) data</strong> in a principled manner. LoS datasets offer high taxon sampling across
+        tens of thousands of species but limited locus quality; WG data provides numerous high-quality loci but
+        narrower taxon coverage. MAGNET bridges both worlds.
+        <ul>
+          <li><strong>Accurate &amp; Interpretable</strong> — topology + branch lengths + phylogenetic uncertainty estimates</li>
+          <li><strong>Scalable</strong> — designed for tens of thousands of species using HPC parallelization</li>
+          <li><strong>Versatile</strong> — handles varying WG assembly quality (scaffold vs. chromosome-scale) and diverse LoS types (exons, UCEs)</li>
+          <li><strong>Expandable</strong> — incrementally incorporates new sequencing data without full de novo re-inference</li>
+          <li><strong>Broadly usable</strong> — largely automated with a user-friendly interface for non-experts</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -172,9 +197,44 @@
           <li>Collaborating with the <strong>Vertebrate Genomes Project (VGP)</strong> consortium and <strong>Scripps Institution of Oceanography</strong></li>
         </ul>
       </div>
+      <div class="stat-row">
+        <a class="stat-chip" href="https://github.com/TurakhiaLab/ROADIES/stargazers" target="_blank">
+          <i class="fas fa-star"></i> <span id="gh-stars">43</span>&nbsp;Stars
+        </a>
+        <a class="stat-chip" href="https://github.com/TurakhiaLab/ROADIES/network/members" target="_blank">
+          <i class="fas fa-code-branch"></i> <span id="gh-forks">--</span>&nbsp;Forks
+        </a>
+        <a class="stat-chip sc-green" href="https://anaconda.org/TurakhiaLab/roadies" target="_blank">
+          <i class="fas fa-download"></i> 2K+&nbsp;Conda Downloads
+        </a>
+        <a class="stat-chip sc-amber" href="https://www.pnas.org/toc/pnas/122/19" target="_blank">
+          <i class="fas fa-book-open"></i> PNAS Journal Cover
+        </a>
+      </div>
       <a class="proj-tag tag-paper" href="https://doi.org/10.1073/pnas.2500553122" target="_blank"><i class="fas fa-file-alt fa-xs"></i> PNAS 2025</a>
       <a class="proj-tag tag-site"  href="https://turakhia.ucsd.edu/ROADIES/" target="_blank"><i class="fas fa-globe fa-xs"></i> Website</a>
       <a class="proj-tag tag-code" href="https://github.com/TurakhiaLab/ROADIES" target="_blank"><i class="fab fa-github fa-xs"></i> GitHub</a>
+      <a class="proj-tag tag-site" href="https://anaconda.org/TurakhiaLab/roadies" target="_blank"><i class="fas fa-box fa-xs"></i> Conda</a>
+    </div>
+  </div>
+
+  <!-- ROADIES-Placer -->
+  <div class="project-item">
+    <div class="proj-icon green"><i class="fas fa-tachometer-alt"></i></div>
+    <div class="proj-body">
+      <div class="proj-title">
+        ROADIES-Placer
+        <span class="status-badge badge-ongoing">Ongoing</span>
+      </div>
+      <div class="proj-meta">2025 – Present &nbsp;&middot;&nbsp; GPU Acceleration / Phylogenomics</div>
+      <div class="proj-desc">
+        A GPU-accelerated and incremental extension of ROADIES for large-scale species tree placement.
+        Rather than re-running full de novo inference when new genomes become available,
+        ROADIES-Placer <strong>places new taxa onto an existing species tree incrementally</strong> —
+        significantly reducing compute time and enabling continuously updated phylogenies as sequencing
+        data grows. GPU acceleration further speeds up the core alignment and tree estimation steps
+        for massive datasets.
+      </div>
     </div>
   </div>
 
@@ -251,6 +311,11 @@
   const saved=localStorage.getItem('ag-theme')||(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
   setTheme(saved);
   btn.addEventListener('click',()=>setTheme(html.getAttribute('data-theme')==='dark'?'light':'dark'));
+  fetch('https://api.github.com/repos/TurakhiaLab/ROADIES')
+    .then(r=>r.json()).then(d=>{
+      if(d.stargazers_count) document.getElementById('gh-stars').textContent=d.stargazers_count;
+      if(d.forks_count)      document.getElementById('gh-forks').textContent=d.forks_count;
+    }).catch(()=>{});
   $(document).ready(function(){
     var navH=$('#navbar').outerHeight(true);$('body').css('padding-top',navH);$('#progress').css('top',navH);
     function upd(){var m=$(document).height()-$(window).height();$('#progress').attr({max:m,value:$(window).scrollTop()});}

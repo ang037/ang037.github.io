@@ -34,7 +34,7 @@
     #navbar { background: var(--nav-bg) !important; border-bottom: 1px solid var(--border); transition: background 0.2s; }
     .navbar-brand { font-size: 1.3rem; color: var(--text) !important; font-weight: 300; }
     .navbar-brand span { font-weight: 700; }
-    .nav-link { color: var(--text-muted) !important; font-size: 0.92rem; padding-left: 1rem !important; padding-right: 1rem !important; }
+    .nav-link { color: var(--text-muted) !important; font-size: 0.88rem; padding-left: 0.7rem !important; padding-right: 0.7rem !important; }
     .nav-link:hover, .nav-link.active { color: var(--accent) !important; }
     .nav-link.active { font-weight: 600; }
     .theme-btn { background: none; border: 1px solid var(--border); border-radius: 20px; padding: 4px 10px; cursor: pointer; color: var(--text-muted); font-size: 0.85rem; transition: all 0.2s; line-height: 1; }
@@ -108,7 +108,7 @@
 <body>
 
 <nav id="navbar" class="navbar fixed-top navbar-expand-md shadow-sm">
-  <div class="container" style="max-width:900px;">
+  <div class="container" style="max-width:960px;">
     <a class="navbar-brand" href="/"><span>Anshu</span> Gupta</a>
     <div class="d-flex align-items-center ml-auto order-md-last">
       <button id="theme-toggle" class="theme-btn mr-2" title="Toggle dark/light mode">
@@ -125,6 +125,9 @@
         <li class="nav-item"><a class="nav-link" href="/cv/">CV</a></li>
         <li class="nav-item"><a class="nav-link active" href="/publications/">Publications</a></li>
         <li class="nav-item"><a class="nav-link" href="/projects/">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="/teaching/">Teaching</a></li>
+        <li class="nav-item"><a class="nav-link" href="/news/">News</a></li>
+        <li class="nav-item"><a class="nav-link" href="/press/">Press</a></li>
       </ul>
     </div>
   </div>
@@ -152,7 +155,13 @@
     <div class="pub-content">
       <div class="pub-title">DP-HLS: A High-Level Synthesis Framework for Accelerating Dynamic Programming Algorithms in Bioinformatics</div>
       <div class="pub-authors"><em>Anshu Gupta</em>*, Yingqi Cao*, Jason Liang, and <a href="https://turakhia.ucsd.edu/" target="_blank">Yatish Turakhia</a></div>
-      <div class="pub-venue-line">IEEE International Symposium on High-Performance Computer Architecture (HPCA), Sydney, Australia, Feb 2026.</div>
+      <div class="pub-venue-line">
+        IEEE International Symposium on High-Performance Computer Architecture (<strong>HPCA</strong>), Sydney, Australia, Feb 2026.
+        <span style="color:var(--text-muted); font-size:0.82rem;">
+          &nbsp;— One of the top-4 computer architecture conferences (alongside ISCA, MICRO, ASPLOS);
+          ~75 papers accepted out of 410 submissions in 2024 (18.3% acceptance rate).
+        </span>
+      </div>
       <a class="pub-tag tag-abs" data-toggle="collapse" href="#abs-dphls" role="button">Abstract</a>
       <a class="pub-tag tag-paper" href="https://ieeexplore.ieee.org/abstract/document/11408544" target="_blank">Paper</a>
       <a class="pub-tag tag-site" href="https://turakhia.ucsd.edu/DP-HLS/" target="_blank">Website</a>
@@ -177,6 +186,9 @@
       <div class="pub-venue-line">
         <span class="hl">Proceedings of the National Academy of Sciences (PNAS)</span>,
         122(19), e2500553122, 2025. <span class="hl">Featured on the journal cover.</span>
+        <span style="color:var(--text-muted); font-size:0.82rem;">
+          &nbsp;— ~15% acceptance rate; Impact Factor 9.1; second most-cited scientific journal globally.
+        </span>
       </div>
       <a class="pub-tag tag-abs" data-toggle="collapse" href="#abs-roadies" role="button">Abstract</a>
       <a class="pub-tag tag-paper" href="https://doi.org/10.1073/pnas.2500553122" target="_blank">Paper</a>
