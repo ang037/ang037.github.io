@@ -1,352 +1,254 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Anshu Gupta | Publications</title>
-  <meta name="description" content="Publications of Anshu Gupta, PhD student at UC San Diego">
-
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Slab:wght@300;400;500&display=swap" rel="stylesheet">
+  <meta name="description" content="Publications — Anshu Gupta, PhD student at UC San Diego">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/all.min.css">
   <link rel="stylesheet" href="/assets/css/academicons.min.css">
-
   <style>
-    body {
-      font-family: 'Roboto', sans-serif;
-      color: #333;
-      background: #fff;
-      font-size: 0.97rem;
+    :root {
+      --bg: #ffffff; --text: #333; --text-muted: #777;
+      --border: #e9ecef; --card-bg: #f8f9fa;
+      --accent: #1a73e8; --accent-light: #e8f0fe; --accent-border: #c5d8fc;
+      --green: #188038; --green-light: #e6f4ea; --green-border: #b7dfc4;
+      --amber: #b45309; --amber-light: #fff3e0; --amber-border: #fcd7a0;
+      --nav-bg: #ffffff; --entry-text: #444; --entry-sub: #555;
+    }
+    [data-theme="dark"] {
+      --bg: #121212; --text: #e0e0e0; --text-muted: #9e9e9e;
+      --border: #2c2c2c; --card-bg: #1e1e1e;
+      --accent: #5b9cf6; --accent-light: #1a2a4a; --accent-border: #2a4a7a;
+      --green: #4caf82; --green-light: #1a2e22; --green-border: #2a4a35;
+      --amber: #e8a838; --amber-light: #2a2010; --amber-border: #5a4010;
+      --nav-bg: #1a1a1a; --entry-text: #ccc; --entry-sub: #aaa;
     }
 
-    #navbar {
-      background: #fff !important;
-      border-bottom: 1px solid #e9ecef;
-    }
-    .navbar-brand {
-      font-size: 1.3rem;
-      color: #333 !important;
-      font-weight: 300;
-      letter-spacing: 0.5px;
-    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body { font-family: 'Roboto', sans-serif; background: var(--bg); color: var(--text); font-size: 0.97rem; transition: background 0.2s, color 0.2s; }
+    a { color: var(--accent); }
+
+    #navbar { background: var(--nav-bg) !important; border-bottom: 1px solid var(--border); transition: background 0.2s; }
+    .navbar-brand { font-size: 1.3rem; color: var(--text) !important; font-weight: 300; }
     .navbar-brand span { font-weight: 700; }
-    .nav-link {
-      color: #555 !important;
-      font-size: 0.92rem;
-      padding-left: 1rem !important;
-      padding-right: 1rem !important;
-    }
-    .nav-link:hover { color: #1a73e8 !important; }
-    .nav-link.active { color: #1a73e8 !important; font-weight: 600; }
+    .nav-link { color: var(--text-muted) !important; font-size: 0.92rem; padding-left: 1rem !important; padding-right: 1rem !important; }
+    .nav-link:hover, .nav-link.active { color: var(--accent) !important; }
+    .nav-link.active { font-weight: 600; }
+    .theme-btn { background: none; border: 1px solid var(--border); border-radius: 20px; padding: 4px 10px; cursor: pointer; color: var(--text-muted); font-size: 0.85rem; transition: all 0.2s; line-height: 1; }
+    .theme-btn:hover { border-color: var(--accent); color: var(--accent); }
 
-    #progress {
-      position: fixed;
-      top: 56px; left: 0;
-      width: 100%; height: 3px;
-      -webkit-appearance: none;
-      appearance: none;
-      border: none;
-      background: transparent;
-      z-index: 1100;
-    }
+    #progress { position: fixed; top: 56px; left: 0; width: 100%; height: 3px; appearance: none; border: none; background: transparent; z-index: 1100; }
     #progress::-webkit-progress-bar { background: transparent; }
-    #progress::-webkit-progress-value { background: #1a73e8; }
-    #progress::-moz-progress-bar { background: #1a73e8; }
+    #progress::-webkit-progress-value { background: var(--accent); }
+    #progress::-moz-progress-bar { background: var(--accent); }
 
-    .page-title {
-      font-size: 1.9rem;
-      font-weight: 700;
-      color: #222;
+    .page-title { font-size: 1.9rem; font-weight: 700; color: var(--text); }
+
+    .section-title {
+      font-size: 0.78rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 1.5px; color: var(--accent);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 6px; margin-bottom: 1.2rem; margin-top: 2.5rem;
     }
 
-    .year-block { margin-bottom: 2.5rem; }
+    /* Year label */
     .year-label {
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: #1a73e8;
-      border-bottom: 2px solid #e9ecef;
-      padding-bottom: 4px;
-      margin-bottom: 1.2rem;
+      font-size: 1.15rem; font-weight: 700; color: var(--accent);
+      border-bottom: 2px solid var(--border); padding-bottom: 4px;
+      margin-bottom: 1.2rem; margin-top: 2rem;
     }
 
-    .pub-row {
-      display: flex;
-      gap: 18px;
-      align-items: flex-start;
-      margin-bottom: 1.5rem;
-      padding-bottom: 1.5rem;
-      border-bottom: 1px solid #f0f0f0;
-    }
+    /* Publication row */
+    .pub-row { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
     .pub-row:last-child { border-bottom: none; }
 
-    .venue-badge {
-      min-width: 72px;
-      max-width: 72px;
-      flex-shrink: 0;
-      text-align: center;
-    }
+    /* Venue badge */
+    .venue-badge { min-width: 70px; max-width: 70px; flex-shrink: 0; text-align: center; margin-top: 2px; }
     .venue-pill {
-      display: inline-block;
-      font-size: 0.72rem;
-      font-weight: 700;
-      border-radius: 5px;
-      padding: 4px 6px;
-      line-height: 1.3;
-      text-align: center;
-      width: 100%;
-      text-decoration: none;
+      display: inline-block; font-size: 0.7rem; font-weight: 700;
+      border-radius: 5px; padding: 4px 5px; line-height: 1.3;
+      text-align: center; width: 100%; text-decoration: none;
     }
     .venue-pill:hover { text-decoration: none; opacity: 0.85; }
-    .pill-conf  { background: #e8f0fe; color: #1a73e8; border: 1px solid #c5d8fc; }
-    .pill-jour  { background: #e6f4ea; color: #188038; border: 1px solid #b7dfc4; }
-    .pill-arxiv { background: #fff3e0; color: #b45309; border: 1px solid #fcd7a0; }
+    .pill-conf  { background: var(--accent-light); color: var(--accent); border: 1px solid var(--accent-border); }
+    .pill-jour  { background: var(--green-light);  color: var(--green);  border: 1px solid var(--green-border); }
 
+    /* Pub content */
     .pub-content { flex: 1; }
-    .pub-title {
-      font-size: 0.97rem;
-      font-weight: 700;
-      color: #1a1a1a;
-      margin-bottom: 3px;
-      line-height: 1.45;
-    }
-    .pub-authors {
-      font-size: 0.87rem;
-      color: #555;
-      margin-bottom: 3px;
-    }
-    .pub-authors em { font-style: normal; font-weight: 600; color: #1a1a1a; }
-    .pub-venue-line {
-      font-size: 0.85rem;
-      font-style: italic;
-      color: #777;
-      margin-bottom: 6px;
-    }
-    .pub-venue-line .highlight {
-      font-weight: 600;
-      color: #188038;
-    }
+    .pub-title { font-size: 0.97rem; font-weight: 700; color: var(--text); margin-bottom: 3px; line-height: 1.45; }
+    .pub-authors { font-size: 0.87rem; color: var(--entry-sub); margin-bottom: 3px; }
+    .pub-authors em { font-style: normal; font-weight: 600; color: var(--text); }
+    .pub-venue-line { font-size: 0.85rem; font-style: italic; color: var(--text-muted); margin-bottom: 6px; }
+    .pub-venue-line .hl { font-weight: 600; color: var(--green); font-style: normal; }
 
+    /* Tags */
     .pub-tag {
-      display: inline-block;
-      font-size: 0.76rem;
-      border-radius: 4px;
-      padding: 2px 9px;
-      margin: 2px 3px 2px 0;
-      text-decoration: none;
-      font-weight: 500;
-      cursor: pointer;
-      transition: background 0.15s;
+      display: inline-block; font-size: 0.75rem; border-radius: 4px;
+      padding: 2px 9px; margin: 2px 3px 2px 0; text-decoration: none;
+      font-weight: 500; cursor: pointer; transition: background 0.15s;
     }
-    .tag-abstract { background: #f1f0ef; color: #444; border: 1px solid #dddbd8; }
-    .tag-abstract:hover { background: #e4e2e0; color: #333; text-decoration: none; }
-    .tag-paper  { background: #e8f0fe; color: #1a73e8; border: 1px solid #c5d8fc; }
-    .tag-paper:hover  { background: #d2e3fc; color: #1a73e8; text-decoration: none; }
-    .tag-site   { background: #e6f4ea; color: #188038; border: 1px solid #b7dfc4; }
-    .tag-site:hover   { background: #ceead6; color: #188038; text-decoration: none; }
-    .tag-code   { background: #f1f0ef; color: #333; border: 1px solid #d5d2ce; }
-    .tag-code:hover   { background: #e0dfdd; color: #333; text-decoration: none; }
+    .tag-abs    { background: var(--card-bg); color: var(--text-muted); border: 1px solid var(--border); }
+    .tag-abs:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+    .tag-paper  { background: var(--accent-light); color: var(--accent); border: 1px solid var(--accent-border); }
+    .tag-paper:hover { opacity: 0.8; text-decoration: none; color: var(--accent); }
+    .tag-site   { background: var(--green-light); color: var(--green); border: 1px solid var(--green-border); }
+    .tag-site:hover { opacity: 0.8; text-decoration: none; color: var(--green); }
+    .tag-code   { background: var(--card-bg); color: var(--text); border: 1px solid var(--border); }
+    .tag-code:hover { border-color: var(--accent); text-decoration: none; color: var(--text); }
 
-    .abstract-box {
-      background: #f8f9fa;
-      border-left: 3px solid #1a73e8;
-      border-radius: 0 5px 5px 0;
-      padding: 12px 14px;
-      margin-top: 8px;
-      font-size: 0.86rem;
-      color: #555;
-      line-height: 1.65;
-    }
+    /* Abstract */
+    .abstract-box { background: var(--card-bg); border-left: 3px solid var(--accent); border-radius: 0 5px 5px 0; padding: 12px 14px; margin-top: 8px; font-size: 0.86rem; color: var(--entry-sub); line-height: 1.65; }
 
-    footer {
-      text-align: center;
-      padding: 22px;
-      font-size: 0.83rem;
-      color: #999;
-      border-top: 1px solid #e9ecef;
-      margin-top: 50px;
-    }
+    footer { text-align: center; padding: 22px; font-size: 0.82rem; color: var(--text-muted); border-top: 1px solid var(--border); margin-top: 50px; }
   </style>
 </head>
 <body>
 
-  <nav id="navbar" class="navbar fixed-top navbar-expand-md navbar-light shadow-sm">
-    <div class="container">
-      <a class="navbar-brand" href="/"><span>Anshu</span> Gupta</a>
+<nav id="navbar" class="navbar fixed-top navbar-expand-md shadow-sm">
+  <div class="container" style="max-width:900px;">
+    <a class="navbar-brand" href="/"><span>Anshu</span> Gupta</a>
+    <div class="d-flex align-items-center ml-auto order-md-last">
+      <button id="theme-toggle" class="theme-btn mr-2" title="Toggle dark/light mode">
+        <i id="theme-icon" class="fas fa-moon"></i>
+      </button>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
               aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="/">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="/cv/">CV</a></li>
-          <li class="nav-item"><a class="nav-link active" href="/publications/">Publications</a></li>
-          <li class="nav-item"><a class="nav-link" href="/projects/">Projects</a></li>
-        </ul>
-      </div>
     </div>
-  </nav>
-
-  <progress id="progress" value="0"></progress>
-
-  <div class="container mt-5 pt-4" style="max-width: 860px;">
-
-    <div class="pt-3 mb-3">
-      <h1 class="page-title">Publications</h1>
-      <p class="text-muted mb-1" style="font-size:0.88rem;">
-        * denotes equal contribution. &nbsp;
-        <a href="https://scholar.google.com/citations?user=vRrKCdwAAAAJ&hl=en" target="_blank" style="color:#1a73e8;">
-          <i class="ai ai-google-scholar"></i> Google Scholar
-        </a>
-      </p>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="/">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="/cv/">CV</a></li>
+        <li class="nav-item"><a class="nav-link active" href="/publications/">Publications</a></li>
+        <li class="nav-item"><a class="nav-link" href="/projects/">Projects</a></li>
+      </ul>
     </div>
+  </div>
+</nav>
 
-    <!-- 2026 -->
-    <div class="year-block">
-      <div class="year-label">2026</div>
+<progress id="progress" value="0"></progress>
 
-      <div class="pub-row">
-        <div class="venue-badge">
-          <a class="venue-pill pill-conf" href="https://hpca-conf.org/2026/" target="_blank">HPCA<br>2026</a>
-        </div>
-        <div class="pub-content">
-          <div class="pub-title">DP-HLS: A High-Level Synthesis Framework for Accelerating Dynamic Programming Algorithms in Bioinformatics</div>
-          <div class="pub-authors">
-            <em>Anshu Gupta</em>*, Yingqi Cao*, Jason Liang, and
-            <a href="https://turakhia.ucsd.edu/" target="_blank">Yatish Turakhia</a>
-          </div>
-          <div class="pub-venue-line">
-            IEEE International Symposium on High-Performance Computer Architecture (HPCA), 2026.
-          </div>
-          <a class="pub-tag tag-abstract" data-toggle="collapse" href="#abs-dphls" role="button">Abstract</a>
-          <a class="pub-tag tag-paper" href="https://doi.org/10.48550/arXiv.2411.03398" target="_blank">arXiv</a>
-          <a class="pub-tag tag-site" href="https://turakhia.ucsd.edu/DP-HLS/" target="_blank">Website</a>
-          <a class="pub-tag tag-code" href="https://github.com/TurakhiaLab/DP-HLS" target="_blank">GitHub</a>
-          <div class="collapse" id="abs-dphls">
-            <div class="abstract-box">
-              Dynamic programming (DP) based algorithms are essential yet compute-intensive parts of numerous bioinformatics pipelines, which typically involve populating a 2-D scoring matrix based on a recursive formula, optionally followed by a traceback step to get the optimal alignment path. DP algorithms are used in a wide spectrum of bioinformatics tasks, including read assembly, homology search, gene annotation, basecalling, and phylogenetic inference. This paper introduces DP-HLS, a novel framework based on High-Level Synthesis (HLS) that simplifies and accelerates the development of a broad set of bioinformatically relevant DP algorithms in hardware. DP-HLS features an easy-to-use template with integrated HLS directives, enabling efficient hardware solutions without requiring hardware design knowledge. We implemented 15 diverse DP kernels, achieving 1.3&ndash;32&times; improved throughput over state-of-the-art GPU and CPU baselines.
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 2025 -->
-    <div class="year-block">
-      <div class="year-label">2025</div>
-
-      <div class="pub-row">
-        <div class="venue-badge">
-          <a class="venue-pill pill-jour" href="https://www.pnas.org/" target="_blank">PNAS</a>
-        </div>
-        <div class="pub-content">
-          <div class="pub-title">Accurate, scalable, and fully automated inference of species trees from raw genome assemblies using ROADIES</div>
-          <div class="pub-authors">
-            <em>Anshu Gupta</em>,
-            <a href="http://eceweb.ucsd.edu/~smirarab/" target="_blank">Siavash Mirarab</a>, and
-            <a href="https://turakhia.ucsd.edu/" target="_blank">Yatish Turakhia</a>
-          </div>
-          <div class="pub-venue-line">
-            <span class="highlight">Proceedings of the National Academy of Sciences (PNAS)</span>,
-            122(19), e2500553122, 2025. Featured on the journal cover.
-          </div>
-          <a class="pub-tag tag-abstract" data-toggle="collapse" href="#abs-roadies" role="button">Abstract</a>
-          <a class="pub-tag tag-paper" href="https://doi.org/10.1073/pnas.2500553122" target="_blank">Paper</a>
-          <a class="pub-tag tag-site" href="https://turakhia.ucsd.edu/ROADIES/" target="_blank">Website</a>
-          <a class="pub-tag tag-code" href="https://github.com/turakhia-lab/ROADIES" target="_blank">GitHub</a>
-          <div class="collapse" id="abs-roadies">
-            <div class="abstract-box">
-              Inference of species trees plays a crucial role in advancing our understanding of evolutionary relationships and has immense significance for diverse biological and medical applications. In this paper, we present ROADIES, a novel pipeline for species tree inference from raw genome assemblies that is fully automated, easy to use, scalable, free from reference bias, and provides flexibility to adjust the tradeoff between accuracy and runtime. The ROADIES pipeline eliminates the need to align whole genomes, choose a single reference species, or pre-select loci such as functional genes. Using genomic datasets from large-scale sequencing consortia across three diverse life forms (placental mammals, pomace flies, and birds), we show that ROADIES infers species trees comparable in quality to state-of-the-art approaches but in a fraction of the time.
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 2020 -->
-    <div class="year-block">
-      <div class="year-label">2020</div>
-
-      <div class="pub-row">
-        <div class="venue-badge">
-          <a class="venue-pill pill-conf" href="https://link.springer.com/book/10.1007/978-981-15-5224-3" target="_blank">Smart<br>Com</a>
-        </div>
-        <div class="pub-content">
-          <div class="pub-title">Organ Detection in Surgical Videos Using Neural Networks</div>
-          <div class="pub-authors">
-            Amit Kumar, <em>Anshu Gupta</em>, and
-            <a href="https://www.iiests.ac.in/IIEST/Faculty/telecom-ankita" target="_blank">Ankita Pramanik</a>
-          </div>
-          <div class="pub-venue-line">
-            Smart Trends in Computing and Communications: Proceedings of SmartCom 2020.
-          </div>
-          <a class="pub-tag tag-abstract" data-toggle="collapse" href="#abs-surgical" role="button">Abstract</a>
-          <a class="pub-tag tag-paper" href="https://link.springer.com/chapter/10.1007/978-981-15-5224-3_34" target="_blank">Paper</a>
-          <div class="collapse" id="abs-surgical">
-            <div class="abstract-box">
-              The automatic surgical video processing for anomaly detection is becoming important since manual feedback from surgeons is subject to errors and time-consuming. In this paper, a convolutional neural network (CNN) is designed to evaluate laparoscopic and endoscopic surgical videos. The neural network will detect and localize the organs for the given videos, laying the path for automatic post-surgical processing.
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 2019 -->
-    <div class="year-block">
-      <div class="year-label">2019</div>
-
-      <div class="pub-row">
-        <div class="venue-badge">
-          <a class="venue-pill pill-conf" href="https://ieeexplore.ieee.org/xpl/conhome/8752095/proceeding" target="_blank">IEEE<br>ISMVL</a>
-        </div>
-        <div class="pub-content">
-          <div class="pub-title">T-depth Optimization for Fault-Tolerant Quantum Circuits</div>
-          <div class="pub-authors">
-            <a href="https://dblp.org/pid/131/6907-1.html" target="_blank">Philipp Niemann</a>,
-            <em>Anshu Gupta</em>, and
-            <a href="https://www.rolfdrechsler.de/" target="_blank">Rolf Drechsler</a>
-          </div>
-          <div class="pub-venue-line">
-            IEEE 49th International Symposium on Multiple-Valued Logic (ISMVL), 2019.
-          </div>
-          <a class="pub-tag tag-abstract" data-toggle="collapse" href="#abs-quantum" role="button">Abstract</a>
-          <a class="pub-tag tag-paper" href="https://ieeexplore.ieee.org/document/8758745" target="_blank">Paper</a>
-          <div class="collapse" id="abs-quantum">
-            <div class="abstract-box">
-              The Clifford+T gate library consisting of Hadamard, T, and CNOT gates has attracted much interest in quantum circuit synthesis, particularly due to its applicability to fault-tolerant realizations. Since fault-tolerant implementations of the T gate have very high latency, recent work is aiming at minimizing the number of T stages, referred to as the T-depth. In this paper, we present an approach to exploit additional ancilla qubits in the mapping of reversible circuits into Clifford+T quantum circuits, with the primary objective to minimize the T-depth.
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
+<div class="container mt-5 pt-4" style="max-width:860px;">
+  <div class="pt-3 mb-3">
+    <h1 class="page-title">Publications</h1>
+    <p style="font-size:0.87rem; color:var(--text-muted); margin:0;">
+      * equal contribution. &nbsp;
+      <a href="https://scholar.google.com/citations?user=vRrKCdwAAAAJ&hl=en" target="_blank">
+        <i class="ai ai-google-scholar"></i> Google Scholar
+      </a>
+    </p>
   </div>
 
-  <footer>&copy; 2026 Anshu Gupta</footer>
+  <!-- 2026 -->
+  <div class="year-label">2026</div>
+  <div class="pub-row">
+    <div class="venue-badge">
+      <a class="venue-pill pill-conf" href="https://hpca-conf.org/2026/" target="_blank">HPCA<br>2026</a>
+    </div>
+    <div class="pub-content">
+      <div class="pub-title">DP-HLS: A High-Level Synthesis Framework for Accelerating Dynamic Programming Algorithms in Bioinformatics</div>
+      <div class="pub-authors"><em>Anshu Gupta</em>*, Yingqi Cao*, Jason Liang, and <a href="https://turakhia.ucsd.edu/" target="_blank">Yatish Turakhia</a></div>
+      <div class="pub-venue-line">IEEE International Symposium on High-Performance Computer Architecture (HPCA), Sydney, Australia, Feb 2026.</div>
+      <a class="pub-tag tag-abs" data-toggle="collapse" href="#abs-dphls" role="button">Abstract</a>
+      <a class="pub-tag tag-paper" href="https://ieeexplore.ieee.org/abstract/document/11408544" target="_blank">Paper</a>
+      <a class="pub-tag tag-site" href="https://turakhia.ucsd.edu/DP-HLS/" target="_blank">Website</a>
+      <a class="pub-tag tag-code" href="https://github.com/TurakhiaLab/DP-HLS" target="_blank">GitHub</a>
+      <div class="collapse" id="abs-dphls">
+        <div class="abstract-box">
+          Dynamic programming (DP) based algorithms are essential yet compute-intensive parts of numerous bioinformatics pipelines. This paper introduces DP-HLS, a novel framework based on High-Level Synthesis (HLS) that simplifies and accelerates the development of a broad set of bioinformatically relevant DP algorithms in hardware. DP-HLS features an easy-to-use template with integrated HLS directives, enabling efficient hardware solutions without requiring hardware design knowledge. We implemented 15 diverse DP kernels, achieving 1.3–32× improved throughput over state-of-the-art GPU and CPU baselines.
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <script>
-    $(document).ready(function () {
-      var navH = $('#navbar').outerHeight(true);
-      $('body').css('padding-top', navH);
-      var $bar = $('#progress');
-      $bar.css('top', navH);
-      function updateBar() {
-        var max = $(document).height() - $(window).height();
-        $bar.attr({ max: max, value: $(window).scrollTop() });
-      }
-      updateBar();
-      $(document).on('scroll', updateBar);
-      $(window).on('resize', function () {
-        navH = $('#navbar').outerHeight(true);
-        $('body').css('padding-top', navH);
-        $bar.css('top', navH);
-        updateBar();
-      });
-    });
-  </script>
+  <!-- 2025 -->
+  <div class="year-label">2025</div>
+  <div class="pub-row">
+    <div class="venue-badge">
+      <a class="venue-pill pill-jour" href="https://www.pnas.org/toc/pnas/122/19" target="_blank">PNAS</a>
+    </div>
+    <div class="pub-content">
+      <div class="pub-title">Accurate, scalable, and fully automated inference of species trees from raw genome assemblies using ROADIES</div>
+      <div class="pub-authors"><em>Anshu Gupta</em>, <a href="http://eceweb.ucsd.edu/~smirarab/" target="_blank">Siavash Mirarab</a>, and <a href="https://turakhia.ucsd.edu/" target="_blank">Yatish Turakhia</a></div>
+      <div class="pub-venue-line">
+        <span class="hl">Proceedings of the National Academy of Sciences (PNAS)</span>,
+        122(19), e2500553122, 2025. <span class="hl">Featured on the journal cover.</span>
+      </div>
+      <a class="pub-tag tag-abs" data-toggle="collapse" href="#abs-roadies" role="button">Abstract</a>
+      <a class="pub-tag tag-paper" href="https://doi.org/10.1073/pnas.2500553122" target="_blank">Paper</a>
+      <a class="pub-tag tag-site" href="https://turakhia.ucsd.edu/ROADIES/" target="_blank">Website</a>
+      <a class="pub-tag tag-code" href="https://github.com/turakhia-lab/ROADIES" target="_blank">GitHub</a>
+      <div class="collapse" id="abs-roadies">
+        <div class="abstract-box">
+          Inference of species trees plays a crucial role in advancing our understanding of evolutionary relationships. We present ROADIES, a novel pipeline for species tree inference from raw genome assemblies that is fully automated, easy to use, scalable, free from reference bias, and provides flexibility to adjust the tradeoff between accuracy and runtime. Using genomic datasets from large-scale sequencing consortia across three diverse life forms (placental mammals, pomace flies, and birds), we show that ROADIES infers species trees comparable in quality to state-of-the-art approaches but in a fraction of the time.
+        </div>
+      </div>
+    </div>
+  </div>
 
+  <!-- 2020 -->
+  <div class="year-label">2020</div>
+  <div class="pub-row">
+    <div class="venue-badge">
+      <a class="venue-pill pill-conf" href="https://link.springer.com/book/10.1007/978-981-15-5224-3" target="_blank">Smart<br>Com</a>
+    </div>
+    <div class="pub-content">
+      <div class="pub-title">Organ Detection in Surgical Videos Using Neural Networks</div>
+      <div class="pub-authors">Amit Kumar, <em>Anshu Gupta</em>, and <a href="https://www.iiests.ac.in/IIEST/Faculty/telecom-ankita" target="_blank">Ankita Pramanik</a></div>
+      <div class="pub-venue-line">Smart Trends in Computing and Communications: Proceedings of SmartCom 2020.</div>
+      <a class="pub-tag tag-abs" data-toggle="collapse" href="#abs-surgical" role="button">Abstract</a>
+      <a class="pub-tag tag-paper" href="https://link.springer.com/chapter/10.1007/978-981-15-5224-3_34" target="_blank">Paper</a>
+      <div class="collapse" id="abs-surgical">
+        <div class="abstract-box">
+          The automatic surgical video processing for anomaly detection is becoming important since manual feedback from surgeons is subject to errors and time-consuming. In this paper, a convolutional neural network (CNN) is designed to evaluate laparoscopic and endoscopic surgical videos. The neural network will detect and localize the organs for the given videos, laying the path for automatic post-surgical processing.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2019 -->
+  <div class="year-label">2019</div>
+  <div class="pub-row">
+    <div class="venue-badge">
+      <a class="venue-pill pill-conf" href="https://ieeexplore.ieee.org/xpl/conhome/8752095/proceeding" target="_blank">IEEE<br>ISMVL</a>
+    </div>
+    <div class="pub-content">
+      <div class="pub-title">T-depth Optimization for Fault-Tolerant Quantum Circuits</div>
+      <div class="pub-authors"><a href="https://dblp.org/pid/131/6907-1.html" target="_blank">Philipp Niemann</a>, <em>Anshu Gupta</em>, and <a href="https://www.rolfdrechsler.de/" target="_blank">Rolf Drechsler</a></div>
+      <div class="pub-venue-line">IEEE 49th International Symposium on Multiple-Valued Logic (ISMVL), 2019.</div>
+      <a class="pub-tag tag-abs" data-toggle="collapse" href="#abs-quantum" role="button">Abstract</a>
+      <a class="pub-tag tag-paper" href="https://ieeexplore.ieee.org/document/8758745" target="_blank">Paper</a>
+      <div class="collapse" id="abs-quantum">
+        <div class="abstract-box">
+          The Clifford+T gate library consisting of Hadamard, T, and CNOT gates has attracted much interest in quantum circuit synthesis. Since fault-tolerant implementations of the T gate have very high latency, recent work aims at minimizing the T-depth. We present an approach to exploit additional ancilla qubits in the mapping of reversible circuits into Clifford+T quantum circuits with the primary objective to minimize the T-depth.
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>&copy; 2026 Anshu Gupta</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+  const html=document.documentElement, btn=document.getElementById('theme-toggle'), icon=document.getElementById('theme-icon');
+  function setTheme(t){html.setAttribute('data-theme',t);localStorage.setItem('ag-theme',t);icon.className=t==='dark'?'fas fa-sun':'fas fa-moon';}
+  const saved=localStorage.getItem('ag-theme')||(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
+  setTheme(saved);
+  btn.addEventListener('click',()=>setTheme(html.getAttribute('data-theme')==='dark'?'light':'dark'));
+  $(document).ready(function(){
+    var navH=$('#navbar').outerHeight(true);$('body').css('padding-top',navH);$('#progress').css('top',navH);
+    function upd(){var m=$(document).height()-$(window).height();$('#progress').attr({max:m,value:$(window).scrollTop()});}
+    upd();$(document).on('scroll',upd);
+    $(window).on('resize',function(){navH=$('#navbar').outerHeight(true);$('body').css('padding-top',navH);$('#progress').css('top',navH);upd();});
+  });
+</script>
 </body>
 </html>
