@@ -1,474 +1,403 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Anshu Gupta | CV</title>
-  <meta name="description" content="Curriculum Vitae of Anshu Gupta, PhD student at UC San Diego">
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Slab:wght@300;400;500&display=swap" rel="stylesheet">
-
-  <!-- Bootstrap 4 -->
+  <meta name="description" content="Curriculum Vitae — Anshu Gupta, PhD student at UC San Diego">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Icons -->
   <link rel="stylesheet" href="/assets/css/all.min.css">
   <link rel="stylesheet" href="/assets/css/academicons.min.css">
-
   <style>
-    body {
-      font-family: 'Roboto', sans-serif;
-      color: #333;
-      background: #fff;
-      font-size: 0.97rem;
+    /* ══ THEME VARIABLES (identical across all pages) ══ */
+    :root {
+      --bg: #ffffff; --text: #333; --text-muted: #777;
+      --border: #e9ecef; --card-bg: #f8f9fa;
+      --accent: #1a73e8; --accent-light: #e8f0fe; --accent-border: #c5d8fc;
+      --green: #188038; --green-light: #e6f4ea; --green-border: #b7dfc4;
+      --amber: #b45309; --amber-light: #fff3e0; --amber-border: #fcd7a0;
+      --nav-bg: #ffffff; --shadow: rgba(0,0,0,0.07);
+      --entry-text: #444; --entry-sub: #555;
+    }
+    [data-theme="dark"] {
+      --bg: #121212; --text: #e0e0e0; --text-muted: #9e9e9e;
+      --border: #2c2c2c; --card-bg: #1e1e1e;
+      --accent: #5b9cf6; --accent-light: #1a2a4a; --accent-border: #2a4a7a;
+      --green: #4caf82; --green-light: #1a2e22; --green-border: #2a4a35;
+      --amber: #e8a838; --amber-light: #2a2010; --amber-border: #5a4010;
+      --nav-bg: #1a1a1a; --shadow: rgba(0,0,0,0.4);
+      --entry-text: #ccc; --entry-sub: #aaa;
     }
 
-    /* ── Navbar ── */
-    #navbar {
-      background: #fff !important;
-      border-bottom: 1px solid #e9ecef;
-    }
-    .navbar-brand {
-      font-size: 1.3rem;
-      color: #333 !important;
-      font-weight: 300;
-      letter-spacing: 0.5px;
-    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body { font-family: 'Roboto', sans-serif; background: var(--bg); color: var(--text); font-size: 0.97rem; transition: background 0.2s, color 0.2s; }
+    a { color: var(--accent); }
+
+    /* ══ NAVBAR ══ */
+    #navbar { background: var(--nav-bg) !important; border-bottom: 1px solid var(--border); transition: background 0.2s; }
+    .navbar-brand { font-size: 1.3rem; color: var(--text) !important; font-weight: 300; }
     .navbar-brand span { font-weight: 700; }
-    .nav-link {
-      color: #555 !important;
-      font-size: 0.92rem;
-      padding-left: 1rem !important;
-      padding-right: 1rem !important;
-    }
-    .nav-link:hover { color: #1a73e8 !important; }
-    .nav-link.active { color: #1a73e8 !important; font-weight: 600; }
+    .nav-link { color: var(--text-muted) !important; font-size: 0.92rem; padding-left: 1rem !important; padding-right: 1rem !important; }
+    .nav-link:hover, .nav-link.active { color: var(--accent) !important; }
+    .nav-link.active { font-weight: 600; }
+    .theme-btn { background: none; border: 1px solid var(--border); border-radius: 20px; padding: 4px 10px; cursor: pointer; color: var(--text-muted); font-size: 0.85rem; transition: all 0.2s; line-height: 1; }
+    .theme-btn:hover { border-color: var(--accent); color: var(--accent); }
 
-    /* ── Progress bar ── */
-    #progress {
-      position: fixed;
-      top: 56px; left: 0;
-      width: 100%; height: 3px;
-      -webkit-appearance: none;
-      appearance: none;
-      border: none;
-      background: transparent;
-      z-index: 1100;
-    }
+    /* ══ PROGRESS BAR ══ */
+    #progress { position: fixed; top: 56px; left: 0; width: 100%; height: 3px; appearance: none; border: none; background: transparent; z-index: 1100; }
     #progress::-webkit-progress-bar { background: transparent; }
-    #progress::-webkit-progress-value { background: #1a73e8; }
-    #progress::-moz-progress-bar { background: #1a73e8; }
+    #progress::-webkit-progress-value { background: var(--accent); }
+    #progress::-moz-progress-bar { background: var(--accent); }
 
-    /* ── Page title ── */
-    .page-title {
-      font-size: 1.9rem;
-      font-weight: 700;
-      color: #222;
-      margin-bottom: 0.2rem;
+    /* ══ PAGE TITLE ══ */
+    .page-title { font-size: 1.9rem; font-weight: 700; color: var(--text); margin-bottom: 0; }
+
+    /* ══ SECTION TITLE (same as all other pages) ══ */
+    .section-title {
+      font-size: 0.78rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 1.5px; color: var(--accent);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 6px; margin-bottom: 1.2rem; margin-top: 2.5rem;
     }
 
-    /* ── CV download button ── */
+    /* ══ CV DOWNLOAD BUTTON ══ */
     .cv-download {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.87rem;
-      font-weight: 500;
-      color: #fff;
-      background: #1a73e8;
-      border-radius: 5px;
-      padding: 6px 16px;
-      text-decoration: none;
-      transition: background 0.15s;
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.85rem; font-weight: 500; color: #fff;
+      background: var(--accent); border-radius: 5px; padding: 6px 16px;
+      text-decoration: none; transition: opacity 0.15s;
     }
-    .cv-download:hover { background: #1558b0; color: #fff; text-decoration: none; }
+    .cv-download:hover { opacity: 0.85; color: #fff; text-decoration: none; }
 
-    /* ── Section headers ── */
-    .cv-section-title {
-      font-size: 1.05rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: #1a73e8;
-      border-bottom: 2px solid #e9ecef;
-      padding-bottom: 5px;
-      margin-bottom: 1rem;
-      margin-top: 2rem;
-    }
-
-    /* ── Entry layout ── */
-    .cv-entry {
-      display: flex;
-      align-items: flex-start;
-      margin-bottom: 1.4rem;
-    }
-    .cv-date {
-      min-width: 130px;
-      font-size: 0.8rem;
-      color: #888;
-      margin-right: 18px;
-      margin-top: 2px;
-      flex-shrink: 0;
-      line-height: 1.4;
-    }
+    /* ══ CV ENTRY (date | body) ══ */
+    .cv-entry { display: flex; align-items: flex-start; margin-bottom: 1.4rem; }
+    .cv-date { min-width: 130px; font-size: 0.78rem; color: var(--text-muted); margin-right: 18px; margin-top: 3px; flex-shrink: 0; line-height: 1.4; }
     .cv-body { flex: 1; }
-    .cv-body h6 {
-      font-size: 0.97rem;
-      font-weight: 600;
-      color: #1a1a1a;
-      margin-bottom: 1px;
-    }
-    .cv-body .cv-subtitle {
-      font-size: 0.87rem;
-      color: #666;
-      margin-bottom: 4px;
-    }
-    .cv-body ul {
-      padding-left: 1.2rem;
-      margin: 4px 0 0 0;
-    }
-    .cv-body ul li {
-      font-size: 0.88rem;
-      color: #555;
-      margin-bottom: 2px;
-      line-height: 1.55;
-    }
+    .cv-body h6 { font-size: 0.97rem; font-weight: 600; color: var(--text); margin-bottom: 1px; }
+    .cv-body .cv-sub { font-size: 0.87rem; color: var(--text-muted); margin-bottom: 4px; }
+    .cv-body ul { padding-left: 1.2rem; margin: 4px 0 0 0; }
+    .cv-body ul li { font-size: 0.88rem; color: var(--entry-sub); margin-bottom: 2px; line-height: 1.55; }
 
-    /* ── Skills grid ── */
-    .skills-table td {
-      padding: 4px 8px 4px 0;
-      font-size: 0.89rem;
-      vertical-align: top;
-    }
-    .skills-table td:first-child {
-      font-weight: 600;
-      color: #333;
-      white-space: nowrap;
-      min-width: 160px;
-    }
-    .skills-table td:last-child { color: #555; }
+    /* ══ PUBLICATION COMPACT ══ */
+    .pub-compact { margin-bottom: 0.9rem; font-size: 0.9rem; line-height: 1.55; }
+    .pub-title-sm { font-weight: 600; color: var(--text); }
+    .pub-venue-sm { font-style: italic; color: var(--text-muted); }
 
-    /* ── Publication entry (compact) ── */
-    .pub-compact {
-      margin-bottom: 0.9rem;
-      font-size: 0.9rem;
-      line-height: 1.55;
-    }
-    .pub-compact .pub-title-sm {
-      font-weight: 600;
-      color: #1a1a1a;
-    }
-    .pub-compact .pub-venue-sm {
-      font-style: italic;
-      color: #666;
-    }
-    .pub-compact a { color: #1a73e8; }
+    /* ══ SKILLS TABLE ══ */
+    .skills-table td { padding: 4px 8px 4px 0; font-size: 0.89rem; vertical-align: top; }
+    .skills-table td:first-child { font-weight: 600; color: var(--text); white-space: nowrap; min-width: 165px; }
+    .skills-table td:last-child { color: var(--entry-sub); }
 
-    /* ── Chips for coursework ── */
-    .course-chip {
-      display: inline-block;
-      font-size: 0.8rem;
-      background: #f3f3f3;
-      border: 1px solid #e0e0e0;
-      border-radius: 4px;
-      padding: 2px 10px;
-      margin: 3px 4px 3px 0;
-      color: #444;
-    }
+    /* ══ COURSE CHIPS ══ */
+    .course-chip { display: inline-block; font-size: 0.79rem; background: var(--card-bg); border: 1px solid var(--border); border-radius: 4px; padding: 2px 10px; margin: 3px 4px 3px 0; color: var(--entry-sub); }
 
-    /* ── Footer ── */
-    footer {
-      text-align: center;
-      padding: 22px;
-      font-size: 0.83rem;
-      color: #999;
-      border-top: 1px solid #e9ecef;
-      margin-top: 50px;
-    }
+    /* ══ SERVICE DOT ══ */
+    .service-item { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 0.7rem; }
+    .service-dot { width: 7px; height: 7px; background: var(--accent); border-radius: 50%; margin-top: 7px; flex-shrink: 0; }
+    .service-text { font-size: 0.9rem; color: var(--entry-text); line-height: 1.55; }
+
+    footer { text-align: center; padding: 22px; font-size: 0.82rem; color: var(--text-muted); border-top: 1px solid var(--border); margin-top: 50px; }
   </style>
 </head>
 <body>
 
-  <!-- Navbar -->
-  <nav id="navbar" class="navbar fixed-top navbar-expand-md navbar-light shadow-sm">
-    <div class="container">
-      <a class="navbar-brand" href="/"><span>Anshu</span> Gupta</a>
+<nav id="navbar" class="navbar fixed-top navbar-expand-md shadow-sm">
+  <div class="container" style="max-width:900px;">
+    <a class="navbar-brand" href="/"><span>Anshu</span> Gupta</a>
+    <div class="d-flex align-items-center ml-auto order-md-last">
+      <button id="theme-toggle" class="theme-btn mr-2" title="Toggle dark/light mode">
+        <i id="theme-icon" class="fas fa-moon"></i>
+      </button>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
               aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="/">About</a></li>
-          <li class="nav-item"><a class="nav-link active" href="/cv/">CV</a></li>
-          <li class="nav-item"><a class="nav-link" href="/publications/">Publications</a></li>
-          <li class="nav-item"><a class="nav-link" href="/projects/">Projects</a></li>
-        </ul>
-      </div>
     </div>
-  </nav>
-
-  <progress id="progress" value="0"></progress>
-
-  <!-- Content -->
-  <div class="container mt-5 pt-4" style="max-width: 860px;">
-
-    <div class="d-flex align-items-start justify-content-between pt-3 mb-1 flex-wrap gap-2">
-      <div>
-        <h1 class="page-title">Curriculum Vitae</h1>
-        <p class="text-muted mb-0" style="font-size:0.88rem;">Last updated: April 2026</p>
-      </div>
-      <a class="cv-download mt-1" href="/assets/pdf/vitae.pdf" target="_blank">
-        <i class="fas fa-file-pdf"></i> Download PDF
-      </a>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="/">About</a></li>
+        <li class="nav-item"><a class="nav-link active" href="/cv/">CV</a></li>
+        <li class="nav-item"><a class="nav-link" href="/publications/">Publications</a></li>
+        <li class="nav-item"><a class="nav-link" href="/projects/">Projects</a></li>
+      </ul>
     </div>
+  </div>
+</nav>
 
-    <!-- ══════ SUMMARY ══════ -->
-    <div class="cv-section-title">Summary</div>
-    <p style="font-size:0.93rem; color:#444; line-height:1.65;">
-      4th-year Ph.D. student in Computer Engineering with expertise in <strong>High-Performance Computing (HPC)</strong>
-      and <strong>hardware-software co-design</strong> for solving large-scale computational challenges in bioinformatics
-      and AI. Highly proficient in Python, C/C++, and Verilog. Seeking research opportunities to leverage expertise
-      in similar fields.
-    </p>
+<progress id="progress" value="0"></progress>
 
-    <!-- ══════ EDUCATION ══════ -->
-    <div class="cv-section-title">Education</div>
-
-    <div class="cv-entry">
-      <div class="cv-date">Sep 2022 – Present</div>
-      <div class="cv-body">
-        <h6>University of California San Diego &mdash; La Jolla, CA</h6>
-        <div class="cv-subtitle">Ph.D. in Computer Science and Engineering &nbsp;(M.S. awarded, GPA: 4.0)</div>
-        <ul>
-          <li>Advised by <a href="https://turakhia.ucsd.edu/" target="_blank"><strong>Prof. Yatish Turakhia</strong></a>
-              and <a href="http://eceweb.ucsd.edu/~smirarab/" target="_blank"><strong>Prof. Siavash Mirarab</strong></a></li>
-          <li>Research exam: <em>Accurate, scalable, and fully automated inference of species trees from raw genomic assemblies using ROADIES</em></li>
-          <li>Research exam committee: <a href="https://cseweb.ucsd.edu/~dasgupta/" target="_blank">Prof. Sanjoy Dasgupta</a>,
-              <a href="https://pharmacy.ucsd.edu/faculty/bandeira" target="_blank">Prof. Nuno Bandeira</a>,
-              <a href="https://gymreklab.com/" target="_blank">Prof. Melissa Gymrek</a></li>
-        </ul>
-      </div>
+<div class="container mt-5 pt-4" style="max-width:860px;">
+  <div class="d-flex align-items-start justify-content-between pt-3 mb-1 flex-wrap" style="gap:10px;">
+    <div>
+      <h1 class="page-title">Curriculum Vitae</h1>
+      <p style="font-size:0.83rem; color:var(--text-muted); margin:2px 0 0;">Last updated: Apr 2026</p>
     </div>
+    <a class="cv-download mt-1" href="/assets/pdf/vitae.pdf" target="_blank">
+      <i class="fas fa-file-pdf"></i> Download PDF
+    </a>
+  </div>
 
-    <div class="cv-entry">
-      <div class="cv-date">Jul 2015 – May 2019</div>
-      <div class="cv-body">
-        <h6>Indian Institute of Engineering Science and Technology, Shibpur &mdash; West Bengal, India</h6>
-        <div class="cv-subtitle">B.Tech. in Electronics and Telecommunication Engineering</div>
-        <ul>
-          <li>GPA: 9.55 / 10 &nbsp;&middot;&nbsp; Class Rank: 4 of 78</li>
-          <li>Advised by <a href="https://www.iiests.ac.in/IIEST/Faculty/telecom-ankita" target="_blank"><strong>Prof. Ankita Pramanik</strong></a></li>
-          <li>Recipient of the <a href="https://www2.daad.de/deutschland/stipendium/datenbank/en/21148-scholarship-database/?detail=50015295" target="_blank"><strong>DAAD WISE Scholarship</strong></a>
-              — summer research internship at the <a href="https://www.uni-bremen.de/en/" target="_blank">University of Bremen, Germany</a></li>
-        </ul>
-      </div>
+  <!-- SUMMARY -->
+  <div class="section-title">Summary</div>
+  <p style="font-size:0.92rem; color:var(--entry-text); line-height:1.75; margin-bottom:0;">
+    4th-year Ph.D. student in Computer Engineering with expertise in <strong>High-Performance Computing (HPC)</strong>
+    and <strong>hardware-software co-design</strong> for solving large-scale computational challenges in bioinformatics
+    and AI. Highly proficient in Python, C/C++, and Verilog.
+  </p>
+
+  <!-- EDUCATION -->
+  <div class="section-title">Education</div>
+
+  <div class="cv-entry">
+    <div class="cv-date">Sep 2022 – Present</div>
+    <div class="cv-body">
+      <h6>University of California San Diego — La Jolla, CA</h6>
+      <div class="cv-sub">Ph.D. in Computer Science and Engineering &nbsp;(M.S. awarded, GPA: 4.0)</div>
+      <ul>
+        <li>Advised by <a href="https://turakhia.ucsd.edu/" target="_blank"><strong>Prof. Yatish Turakhia</strong></a>
+            and <a href="http://eceweb.ucsd.edu/~smirarab/" target="_blank"><strong>Prof. Siavash Mirarab</strong></a></li>
+        <li>Research exam: <em>Accurate, scalable, and fully automated inference of species trees from raw genomic assemblies using ROADIES</em></li>
+        <li>Research exam committee: <a href="https://cseweb.ucsd.edu/~dasgupta/" target="_blank">Prof. Sanjoy Dasgupta</a>,
+            <a href="https://pharmacy.ucsd.edu/faculty/bandeira" target="_blank">Prof. Nuno Bandeira</a>,
+            <a href="https://gymreklab.com/" target="_blank">Prof. Melissa Gymrek</a></li>
+      </ul>
     </div>
+  </div>
 
-    <!-- ══════ PUBLICATIONS ══════ -->
-    <div class="cv-section-title">Publications
-      <a href="https://scholar.google.com/citations?user=vRrKCdwAAAAJ&hl=en" target="_blank"
-         style="font-size:0.75rem; font-weight:400; text-transform:none; letter-spacing:0; margin-left:8px;">
-        [Google Scholar]
-      </a>
+  <div class="cv-entry">
+    <div class="cv-date">Jul 2015 – May 2019</div>
+    <div class="cv-body">
+      <h6>IIEST Shibpur — West Bengal, India</h6>
+      <div class="cv-sub">B.Tech. in Electronics and Telecommunication Engineering</div>
+      <ul>
+        <li>GPA: 9.55 / 10 &nbsp;&middot;&nbsp; Class Rank: 4 of 78</li>
+        <li>Advised by <a href="https://www.iiests.ac.in/IIEST/Faculty/telecom-ankita" target="_blank"><strong>Prof. Ankita Pramanik</strong></a></li>
+        <li>Recipient of the <a href="https://www2.daad.de/deutschland/stipendium/datenbank/en/21148-scholarship-database/?detail=50015295" target="_blank"><strong>DAAD WISE Scholarship</strong></a>
+            — summer research internship at the <a href="https://www.uni-bremen.de/en/" target="_blank">University of Bremen, Germany</a></li>
+      </ul>
     </div>
+  </div>
 
-    <div class="pub-compact">
-      <span class="pub-title-sm">DP-HLS: A High-Level Synthesis Framework for Accelerating Dynamic Programming Algorithms in Bioinformatics.</span><br>
-      A. Gupta*, Y. Cao*, J. Liang, Y. Turakhia.
-      <span class="pub-venue-sm">IEEE HPCA 2026.</span>
-      [<a href="https://doi.org/10.48550/arXiv.2411.03398" target="_blank">arXiv</a>]
+  <!-- PUBLICATIONS -->
+  <div class="section-title">Publications
+    <a href="https://scholar.google.com/citations?user=vRrKCdwAAAAJ&hl=en" target="_blank"
+       style="font-size:0.72rem; font-weight:400; text-transform:none; letter-spacing:0; margin-left:8px; color:var(--accent);">[Google Scholar]</a>
+  </div>
+
+  <div class="pub-compact">
+    <span class="pub-title-sm">DP-HLS: A High-Level Synthesis Framework for Accelerating Dynamic Programming Algorithms in Bioinformatics.</span><br>
+    A. Gupta*, Y. Cao*, J. Liang, Y. Turakhia.
+    <span class="pub-venue-sm">IEEE HPCA 2026, Sydney, Australia.</span>
+    [<a href="https://ieeexplore.ieee.org/abstract/document/11408544" target="_blank">paper</a>]
+  </div>
+
+  <div class="pub-compact">
+    <span class="pub-title-sm">Accurate, scalable, and fully automated inference of species trees from raw genome assemblies using ROADIES.</span><br>
+    A. Gupta, S. Mirarab, Y. Turakhia.
+    <span class="pub-venue-sm">Proc. Natl. Acad. Sci. U.S.A. 122(19), e2500553122 (2025). <strong style="color:var(--green);">Featured on journal cover.</strong></span>
+    [<a href="https://doi.org/10.1073/pnas.2500553122" target="_blank">paper</a>]
+  </div>
+
+  <div class="pub-compact">
+    <span class="pub-title-sm">Organ Detection in Surgical Videos Using Neural Networks.</span><br>
+    A. Kumar, A. Gupta, A. Pramanik.
+    <span class="pub-venue-sm">SmartCom 2020.</span>
+    [<a href="https://link.springer.com/chapter/10.1007/978-981-15-5224-3_34" target="_blank">paper</a>]
+  </div>
+
+  <div class="pub-compact">
+    <span class="pub-title-sm">T-depth Optimization for Fault-Tolerant Quantum Circuits.</span><br>
+    P. Niemann, A. Gupta, R. Drechsler.
+    <span class="pub-venue-sm">IEEE ISMVL 2019.</span>
+    [<a href="https://ieeexplore.ieee.org/document/8758745" target="_blank">paper</a>]
+  </div>
+
+  <!-- WORK EXPERIENCE -->
+  <div class="section-title">Work Experience</div>
+
+  <div class="cv-entry">
+    <div class="cv-date">Jun – Sep 2025</div>
+    <div class="cv-body">
+      <h6><a href="https://www.amd.com/en/corporate/research.html" target="_blank">AMD Research &amp; Advanced Development (RAD)</a> — San Jose, CA</h6>
+      <div class="cv-sub">Research Associate – PhD &nbsp;&middot;&nbsp; Mentor: Stephen Neuendorffer</div>
+      <ul>
+        <li>Emulated sub-modules of an advanced AI test chip on cutting-edge FPGA platform, contributing to hardware and software bring-up of custom silicon.</li>
+        <li>Conducted runtime performance characterization of AI models on the target test-chip architecture.</li>
+      </ul>
     </div>
+  </div>
 
-    <div class="pub-compact">
-      <span class="pub-title-sm">Accurate, scalable, and fully automated inference of species trees from raw genome assemblies using ROADIES.</span><br>
-      A. Gupta, S. Mirarab, Y. Turakhia.
-      <span class="pub-venue-sm">Proc. Natl. Acad. Sci. U.S.A. 122(19), e2500553122 (2025). Featured on journal cover.</span>
-      [<a href="https://doi.org/10.1073/pnas.2500553122" target="_blank">paper</a>]
+  <div class="cv-entry">
+    <div class="cv-date">Jun – Sep 2023</div>
+    <div class="cv-body">
+      <h6><a href="https://www.analog.com/" target="_blank">Analog Devices, Inc.</a> — Wilmington, MA</h6>
+      <div class="cv-sub">ASIC BU Digital Design Intern</div>
+      <ul>
+        <li>Conducted hardware architectural benchmarking for Cadence Tensilica Xtensa configurable processors.</li>
+        <li>Characterized performance, power, and area metrics for low-power embedded processor configurations.</li>
+      </ul>
     </div>
+  </div>
 
-    <div class="pub-compact">
-      <span class="pub-title-sm">Organ Detection in Surgical Videos Using Neural Networks.</span><br>
-      A. Kumar, A. Gupta, A. Pramanik.
-      <span class="pub-venue-sm">SmartCom 2020.</span>
-      [<a href="https://link.springer.com/chapter/10.1007/978-981-15-5224-3_34" target="_blank">paper</a>]
+  <div class="cv-entry">
+    <div class="cv-date">Jul 2019 – Jul 2022</div>
+    <div class="cv-body">
+      <h6><a href="https://www.analog.com/" target="_blank">Analog Devices India Pvt. Ltd.</a> — Bengaluru, India</h6>
+      <div class="cv-sub">Digital Design Engineer</div>
+      <ul>
+        <li>Optimized embedded signal processing kernels using SIMD operations and architecture-specific vectorization, reducing DSP cycle count by 33%.</li>
+        <li>Contributed to the digital front-end design and tape-out of a low-power Battery Management SoC.</li>
+        <li>Evaluated ARM Cortex-M processor and SRAM/ROM architecture power, performance, and area trade-offs for low-power embedded SoCs.</li>
+      </ul>
     </div>
+  </div>
 
-    <div class="pub-compact">
-      <span class="pub-title-sm">T-depth Optimization for Fault-Tolerant Quantum Circuits.</span><br>
-      P. Niemann, A. Gupta, R. Drechsler.
-      <span class="pub-venue-sm">IEEE ISMVL 2019.</span>
-      [<a href="https://ieeexplore.ieee.org/document/8758745" target="_blank">paper</a>]
+  <!-- RESEARCH EXPERIENCE -->
+  <div class="section-title">Research Experience
+    <span style="font-size:0.72rem; font-weight:400; text-transform:none; letter-spacing:0; color:var(--text-muted); margin-left:6px;">
+      Mentor: <a href="https://turakhia.ucsd.edu/" target="_blank">Prof. Yatish Turakhia</a>
+    </span>
+  </div>
+
+  <div class="cv-entry">
+    <div class="cv-date">May 2025 – Ongoing</div>
+    <div class="cv-body">
+      <h6>ML Hardware Acceleration</h6>
+      <ul>
+        <li>Designing <strong>hardware-aware weight compression techniques</strong> to optimize and accelerate Deep Learning inference on specialized hardware.</li>
+        <li>Focused on maximizing computational efficiency and reducing memory footprint for deploying large-scale neural networks at the edge.</li>
+      </ul>
     </div>
+  </div>
 
-    <!-- ══════ WORK EXPERIENCE ══════ -->
-    <div class="cv-section-title">Work Experience</div>
-
-    <div class="cv-entry">
-      <div class="cv-date">Jun – Sep 2025</div>
-      <div class="cv-body">
-        <h6><a href="https://www.amd.com/en/corporate/research.html" target="_blank">AMD Research and Advanced Development (RAD)</a> &mdash; San Jose, CA</h6>
-        <div class="cv-subtitle">Research Associate – PhD &nbsp;&middot;&nbsp; Mentor: Stephen Neuendorffer</div>
-        <ul>
-          <li>Emulated sub-modules of an advanced AI test chip on cutting-edge FPGA platform, contributing to hardware and software bring-up of custom silicon.</li>
-          <li>Conducted runtime performance characterization of AI models on the target test-chip architecture.</li>
-        </ul>
-      </div>
+  <div class="cv-entry">
+    <div class="cv-date">Jan 2023 – Ongoing</div>
+    <div class="cv-body">
+      <h6>ROADIES — Automated Species Tree Inference Tool</h6>
+      <ul>
+        <li>Led the development of <a href="https://turakhia.ucsd.edu/ROADIES/" target="_blank">ROADIES</a>, a reference-free, highly parallelized HPC tool for evolutionary genomics using GPU/CPU co-processing.</li>
+        <li>Achieved <strong>176× speedup</strong> in tree generation for large-scale genomics datasets.</li>
+        <li>Published in <strong>PNAS 2025</strong>, featured on the journal cover. Presented at <strong>ISMB 2024</strong>.</li>
+        <li>Actively used by researchers globally; 2K+ conda downloads, 43 GitHub stars.</li>
+      </ul>
     </div>
+  </div>
 
-    <div class="cv-entry">
-      <div class="cv-date">Jun – Sep 2023</div>
-      <div class="cv-body">
-        <h6><a href="https://www.analog.com/" target="_blank">Analog Devices, Inc.</a> &mdash; Wilmington, MA</h6>
-        <div class="cv-subtitle">ASIC BU Digital Design Intern</div>
-        <ul>
-          <li>Conducted hardware architectural benchmarking for Cadence Tensilica Xtensa configurable processors.</li>
-          <li>Characterized performance, power, and area metrics for low-power embedded processor configurations.</li>
-        </ul>
-      </div>
+  <div class="cv-entry">
+    <div class="cv-date">Nov 2022 – Jun 2024</div>
+    <div class="cv-body">
+      <h6>DP-HLS — FPGA Acceleration Framework</h6>
+      <ul>
+        <li>Developed <a href="https://turakhia.ucsd.edu/DP-HLS/" target="_blank">DP-HLS</a>, an HLS-based framework achieving <strong>32× speedup</strong> and <strong>20× faster implementation time</strong> for bioinformatics DP algorithms.</li>
+        <li>Designed parameterizable systolic array architectures for easy algorithm customization without hardware redesign.</li>
+        <li>Published at <strong>IEEE HPCA 2026</strong>, Sydney, Australia.</li>
+      </ul>
     </div>
+  </div>
 
-    <div class="cv-entry">
-      <div class="cv-date">Jul 2019 – Jul 2022</div>
-      <div class="cv-body">
-        <h6><a href="https://www.analog.com/" target="_blank">Analog Devices India Pvt. Ltd.</a> &mdash; Bengaluru, India</h6>
-        <div class="cv-subtitle">Digital Design Engineer</div>
-        <ul>
-          <li>Optimized embedded signal processing kernels using SIMD operations and architecture-specific vectorization, reducing DSP cycle count by 33%.</li>
-          <li>Contributed to the digital front-end design and tape-out of a low-power Battery Management SoC.</li>
-          <li>Evaluated ARM Cortex-M processor architecture and SRAM/ROM architecture's power, performance, and area trade-offs for low-power embedded SoCs.</li>
-        </ul>
-      </div>
+  <!-- SERVICE -->
+  <div class="section-title">Service</div>
+
+  <div class="service-item">
+    <div class="service-dot"></div>
+    <div class="service-text"><strong>Artifact Evaluation Committee</strong>, <a href="https://iscaconf.org/isca2025/" target="_blank">ISCA 2025</a>.</div>
+  </div>
+  <div class="service-item">
+    <div class="service-dot"></div>
+    <div class="service-text"><strong>Reviewer</strong>, <a href="https://academic.oup.com/bioinformatics" target="_blank">Bioinformatics</a> (Oxford Academic).</div>
+  </div>
+  <div class="service-item">
+    <div class="service-dot"></div>
+    <div class="service-text"><strong>Workshop Co-organizer</strong>, <a href="https://biosys-workshop.github.io/dist/index.html" target="_blank">BioSys Workshop</a> @ <a href="https://www.asplos-conference.org/" target="_blank">ASPLOS 2024</a>, San Diego, CA.</div>
+  </div>
+  <div class="service-item">
+    <div class="service-dot"></div>
+    <div class="service-text"><strong>Artifact Evaluation Committee</strong>, <a href="https://iscaconf.org/isca2024/" target="_blank">ISCA 2024</a>.</div>
+  </div>
+
+  <!-- TECHNICAL SKILLS -->
+  <div class="section-title">Technical Skills</div>
+  <table class="skills-table mb-2">
+    <tr>
+      <td>GPU &amp; HPC Acceleration</td>
+      <td>CUDA, MPI, OpenMP, Intel TBB, Slurm, Amazon AWS, Snakemake, Conda, Bash</td>
+    </tr>
+    <tr>
+      <td>AI/ML &amp; Software</td>
+      <td>Python, C/C++, HLS, R</td>
+    </tr>
+    <tr>
+      <td>Hardware &amp; Co-Design</td>
+      <td>ASIC/Custom Silicon Design Flow, FPGA (AMD/Xilinx Vitis HLS/Vivado), Verilog, SystemVerilog</td>
+    </tr>
+  </table>
+
+  <!-- OTHER PROJECTS -->
+  <div class="section-title">Other Projects</div>
+
+  <div class="cv-entry">
+    <div class="cv-date">Jan 2023 – Mar 2024</div>
+    <div class="cv-body">
+      <h6>Parallelized Genomic and HPC Algorithms &nbsp;<small style="font-weight:400; color:var(--text-muted);">C++, CUDA, Intel TBB, Git</small></h6>
+      <ul>
+        <li>Parallelized Suffix Array construction on GPUs, achieving 86–571× speedup over optimized CPU baselines.</li>
+        <li>Accelerated dense matrix multiplication on NVIDIA K80/T4 GPUs; implemented Intel AVX2 vectorization.</li>
+        <li>Optimized large-scale solvers (Aliev-Panfilov) on the Expanse Supercomputer using MPI and C++.</li>
+      </ul>
     </div>
+  </div>
 
-    <!-- ══════ RESEARCH EXPERIENCE ══════ -->
-    <div class="cv-section-title">Research Experience
-      <span style="font-size:0.78rem; font-weight:400; text-transform:none; letter-spacing:0; color:#666; margin-left:6px;">Mentor: <a href="https://turakhia.ucsd.edu/" target="_blank">Prof. Yatish Turakhia</a></span>
+  <div class="cv-entry">
+    <div class="cv-date">Apr – Jun 2023</div>
+    <div class="cv-body">
+      <h6>Optimization of HLS4ML Library &nbsp;<small style="font-weight:400; color:var(--text-muted);">Vitis HLS, Vivado, Git, Python</small></h6>
+      <ul>
+        <li>Improved the HLS4ML library for efficient ML hardware inference via HLS, focusing on the DL-to-FPGA flow.</li>
+        <li>Partnered with CERN's HLS4ML team to implement feature enhancements and optimizations.</li>
+      </ul>
     </div>
+  </div>
 
-    <div class="cv-entry">
-      <div class="cv-date">May 2025 – Ongoing</div>
-      <div class="cv-body">
-        <h6>ML Hardware Acceleration</h6>
-        <ul>
-          <li>Designing <strong>hardware-aware weight compression techniques</strong> to significantly optimize and accelerate Deep Learning inference on specialized hardware.</li>
-          <li>Research focused on maximizing computational efficiency and reducing memory footprint for deploying large-scale neural networks at the edge.</li>
-        </ul>
-      </div>
-    </div>
+  <!-- COURSEWORK -->
+  <div class="section-title">Relevant Coursework</div>
+  <div class="mb-3">
+    <span class="course-chip">Principles of Computer Architecture</span>
+    <span class="course-chip">Parallel Computer Architecture</span>
+    <span class="course-chip">Parallel Computation</span>
+    <span class="course-chip">Parallel Computation in Bioinformatics</span>
+    <span class="course-chip">Design Automation and Prototyping</span>
+    <span class="course-chip">Validation and Testing in Embedded Systems</span>
+    <span class="course-chip">Algorithms in Computational Biology</span>
+    <span class="course-chip">Computational Evolutionary Biology</span>
+  </div>
 
-    <div class="cv-entry">
-      <div class="cv-date">Jan 2023 – Ongoing</div>
-      <div class="cv-body">
-        <h6>ROADIES — Automated Species Tree Inference Tool for Genomic Datasets</h6>
-        <ul>
-          <li>Led the development of <a href="https://turakhia.ucsd.edu/ROADIES/" target="_blank">ROADIES</a>, a reference-free, highly parallelized HPC tool for evolutionary genomics using GPU/CPU co-processing and parallelization primitives.</li>
-          <li>Achieved <strong>176× speedup</strong> in tree generation for large-scale genomics datasets, reducing computational cost.</li>
-          <li>Published in <strong>PNAS</strong>, featured on the journal cover. Presented at <strong>ISMB 2024</strong>.</li>
-        </ul>
-      </div>
-    </div>
+  <!-- LANGUAGES -->
+  <div class="section-title">Languages</div>
+  <p style="font-size:0.9rem; color:var(--entry-sub);">English (fluent) &nbsp;&middot;&nbsp; Hindi (native) &nbsp;&middot;&nbsp; Bengali (fluent)</p>
 
-    <div class="cv-entry">
-      <div class="cv-date">Nov 2022 – Jun 2024</div>
-      <div class="cv-body">
-        <h6>DP-HLS — FPGA Acceleration Framework</h6>
-        <ul>
-          <li>Developed <a href="https://turakhia.ucsd.edu/DP-HLS/" target="_blank">DP-HLS</a>, an HLS-based framework achieving <strong>32× speedup</strong> and <strong>20× faster implementation time</strong> for accelerating dynamic programming algorithms for bioinformatics workloads.</li>
-          <li>Designed the framework for easy customization of algorithms without hardware redesign, using highly parameterizable systolic array architectures.</li>
-          <li>Accepted at <strong>HPCA 2026</strong>.</li>
-        </ul>
-      </div>
-    </div>
+</div><!-- /container -->
 
-    <!-- ══════ TECHNICAL SKILLS ══════ -->
-    <div class="cv-section-title">Technical Skills</div>
-    <table class="skills-table mb-2">
-      <tr>
-        <td>GPU &amp; HPC Acceleration</td>
-        <td>CUDA, MPI, OpenMP, Intel TBB, Slurm, Amazon AWS, Snakemake, Conda, Bash</td>
-      </tr>
-      <tr>
-        <td>AI/ML &amp; Software</td>
-        <td>Python, C/C++, HLS, R</td>
-      </tr>
-      <tr>
-        <td>Hardware &amp; Co-Design</td>
-        <td>ASIC/Custom Silicon Design Flow, FPGA (AMD/Xilinx Vitis HLS/Vivado), Verilog, SystemVerilog</td>
-      </tr>
-    </table>
+<footer>&copy; 2026 Anshu Gupta</footer>
 
-    <!-- ══════ OTHER PROJECTS ══════ -->
-    <div class="cv-section-title">Other Projects</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+  const html = document.documentElement;
+  const btn  = document.getElementById('theme-toggle');
+  const icon = document.getElementById('theme-icon');
+  function setTheme(t) { html.setAttribute('data-theme',t); localStorage.setItem('ag-theme',t); icon.className=t==='dark'?'fas fa-sun':'fas fa-moon'; }
+  const saved = localStorage.getItem('ag-theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
+  setTheme(saved);
+  btn.addEventListener('click', ()=>setTheme(html.getAttribute('data-theme')==='dark'?'light':'dark'));
 
-    <div class="cv-entry">
-      <div class="cv-date">Jan 2023 – Mar 2024</div>
-      <div class="cv-body">
-        <h6>Parallelized Genomic and HPC Algorithms &nbsp;<small class="text-muted" style="font-weight:400;">C++, CUDA, Intel TBB, Git</small></h6>
-        <ul>
-          <li>Executed high-performance parallelization of Suffix Array construction on GPUs, achieving 86–571× speedup over optimized CPU baselines for genomic read mapping.</li>
-          <li>Accelerated dense matrix multiplication using CUDA on NVIDIA K80/T4 GPUs and implemented Intel AVX2 vectorization for high-throughput computing.</li>
-          <li>Optimized computation on the Expanse Supercomputer using MPI and C++ parallelization for challenging solvers (e.g., Aliev-Panfilov).</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="cv-entry">
-      <div class="cv-date">Apr – Jun 2023</div>
-      <div class="cv-body">
-        <h6>Optimization of HLS4ML Library &nbsp;<small class="text-muted" style="font-weight:400;">Vitis HLS, Vivado, Git, Python</small></h6>
-        <ul>
-          <li>Improved the HLS4ML library to achieve efficient ML hardware inference via High-Level Synthesis, focusing on the DL-to-FPGA flow.</li>
-          <li>Partnered with CERN's HLS4ML team to implement feature enhancements and optimizations.</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- ══════ COURSEWORK ══════ -->
-    <div class="cv-section-title">Relevant Coursework</div>
-    <div class="mb-3">
-      <span class="course-chip">Principles of Computer Architecture</span>
-      <span class="course-chip">Parallel Computer Architecture</span>
-      <span class="course-chip">Parallel Computation</span>
-      <span class="course-chip">Parallel Computation in Bioinformatics</span>
-      <span class="course-chip">Design Automation and Prototyping</span>
-      <span class="course-chip">Validation and Testing in Embedded Systems</span>
-      <span class="course-chip">Algorithms in Computational Biology</span>
-      <span class="course-chip">Computational Evolutionary Biology</span>
-    </div>
-
-    <!-- ══════ LANGUAGES ══════ -->
-    <div class="cv-section-title">Languages</div>
-    <p style="font-size:0.9rem; color:#555;">
-      English (fluent) &nbsp;&middot;&nbsp; Hindi (native) &nbsp;&middot;&nbsp; Bengali (fluent)
-    </p>
-
-  </div><!-- /container -->
-
-  <!-- Footer -->
-  <footer>&copy; 2026 Anshu Gupta</footer>
-
-  <!-- Scripts -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-  <script>
-    $(document).ready(function () {
-      var navH = $('#navbar').outerHeight(true);
-      $('body').css('padding-top', navH);
-      var $bar = $('#progress');
-      $bar.css('top', navH);
-      function updateBar() {
-        var max = $(document).height() - $(window).height();
-        $bar.attr({ max: max, value: $(window).scrollTop() });
-      }
-      updateBar();
-      $(document).on('scroll', updateBar);
-      $(window).on('resize', function () { navH = $('#navbar').outerHeight(true); $('body').css('padding-top', navH); $bar.css('top', navH); updateBar(); });
-    });
-  </script>
-
+  $(document).ready(function(){
+    var navH=$('#navbar').outerHeight(true); $('body').css('padding-top',navH); $('#progress').css('top',navH);
+    function upd(){var m=$(document).height()-$(window).height();$('#progress').attr({max:m,value:$(window).scrollTop()});}
+    upd(); $(document).on('scroll',upd);
+    $(window).on('resize',function(){navH=$('#navbar').outerHeight(true);$('body').css('padding-top',navH);$('#progress').css('top',navH);upd();});
+  });
+</script>
 </body>
 </html>
